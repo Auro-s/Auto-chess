@@ -32,7 +32,7 @@ public class AutoBattleManager : MonoBehaviour
                 // Attack the first enemy in range (you can modify this logic based on your requirements)
                 if (nearbyEnemies.Length > 0)
                 {
-                    unit.TryAttack(nearbyEnemies[0]);
+                    unit.Attack(nearbyEnemies[0]);
                 }
             }
         }

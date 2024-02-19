@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
     }
 
     // Example method for attacking another unit
-    public void TryAttack(Unit target)
+    public void Attack(Unit target)
     {
         // Check if the target has the "Enemy" tag
         if (target.CompareTag("Enemy"))
