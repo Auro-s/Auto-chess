@@ -26,8 +26,8 @@ public class Unit : MonoBehaviour
     // Example method for attacking another unit
     public void Attack(Unit target)
     {
-        // Check if the target has the "Enemy" tag
-        if (target.CompareTag("Enemy"))
+        // Check if the target is not null
+        if (target != null)
         {
             // Check if enough time has passed since the last attack based on attack speed
             if (Time.time - lastAttackTime >= 1f / attackSpeed)
@@ -38,6 +38,7 @@ public class Unit : MonoBehaviour
             }
         }
     }
+
 
     // Example method for when the unit dies
     void Die()
