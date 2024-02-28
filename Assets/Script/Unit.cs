@@ -9,9 +9,10 @@ public class Unit : MonoBehaviour
     public float defense = 5f;
     public float attackRange = 5f;
     public float attackSpeed = 1f;
+
     private float lastAttackTime;
 
-    // Example method to handle taking damage
+    // Handle taking damage
     public void TakeDamage(float amount)
     {
         float damageTaken = amount - defense;
@@ -39,8 +40,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-
-    // Example method for when the unit dies
     void Die()
     {
         // Handle death logic here
