@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float checkInterval = 0.5f; // How often to check for nearby units
+    public float checkInterval = 0.2f; // How often to check for nearby units
     public List<Unit> allUnits = new List<Unit>();// Reference to all units in the game
     public Button endButton;
     public bool isPaused = true;
