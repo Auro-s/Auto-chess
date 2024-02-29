@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour
     public float attackRange = 5f;
     public float attackSpeed = 1f;
     public float movementSpeed = 3f;
+    public string faction;
 
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
