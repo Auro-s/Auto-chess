@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 9472137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -2, z: 0}
+  m_LocalPosition: {x: 7.5, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261,6 +261,7 @@ MonoBehaviour:
   defense: 5
   attackRange: 5
   attackSpeed: 1
+  movementSpeed: 3
 --- !u!1 &94382601
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +626,7 @@ Transform:
   m_GameObject: {fileID: 208219737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 7.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -683,6 +684,7 @@ MonoBehaviour:
   defense: 5
   attackRange: 100
   attackSpeed: 1
+  movementSpeed: 3
 --- !u!1 &360167811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,8 +2774,9 @@ MonoBehaviour:
   health: 1000
   damage: 20
   defense: 5
-  attackRange: 100
+  attackRange: 5
   attackSpeed: 2
+  movementSpeed: 3
 --- !u!58 &464199842
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2870,7 +2873,7 @@ Transform:
   m_GameObject: {fileID: 464199840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3279,7 +3282,7 @@ Transform:
   m_GameObject: {fileID: 773014818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 7.5, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3337,6 +3340,7 @@ MonoBehaviour:
   defense: 5
   attackRange: 5
   attackSpeed: 1
+  movementSpeed: 3
 --- !u!1 &906702737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3558,7 @@ MonoBehaviour:
   checkInterval: 0.5
   allUnits: []
   endButton: {fileID: 1610416119}
+  isPaused: 1
 --- !u!1 &1137755237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,8 +3594,9 @@ MonoBehaviour:
   health: 1000
   damage: 1
   defense: 5
-  attackRange: 20
+  attackRange: 5
   attackSpeed: 1
+  movementSpeed: 3
 --- !u!58 &1137755239
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3687,7 +3693,7 @@ Transform:
   m_GameObject: {fileID: 1137755237}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -2, z: 0}
+  m_LocalPosition: {x: -7, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4053,8 +4059,9 @@ MonoBehaviour:
   health: 1000
   damage: 1
   defense: 5
-  attackRange: 20
+  attackRange: 5
   attackSpeed: 1
+  movementSpeed: 3
 --- !u!58 &2091652629
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4151,7 +4158,7 @@ Transform:
   m_GameObject: {fileID: 2091652627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 2, z: 0}
+  m_LocalPosition: {x: -7, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

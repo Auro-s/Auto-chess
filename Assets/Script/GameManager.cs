@@ -9,11 +9,26 @@ public class GameManager : MonoBehaviour
     public float checkInterval = 0.5f; // How often to check for nearby units
     public List<Unit> allUnits = new List<Unit>();// Reference to all units in the game
     public Button endButton;
+    public bool isPaused = true;
 
-
-    private bool isPaused = true;
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
     
-
+    private static GameManager _instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameManager>();
+            }
+            return _instance;
+        }
+    }
+    
     void Start()
     {
         // Populate the 'allUnits' list with references to all Unit components in the scene
