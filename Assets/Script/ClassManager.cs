@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class ClassManager : MonoBehaviour
 {
-    public static ClassManager Instance; // Singleton instance
+    public static ClassManager Instance; 
 
+    public TextMeshProUGUI countTextW;
     public float warriorHealthBonus = 10f;
     public float tankDefenseBonus = 2f;
 
@@ -22,7 +24,14 @@ public class ClassManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Update()
+    {
+        // Find all units and filter by the specified faction
+        Unit[] units = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Warrior").ToArray();
 
+        // Display the count of units in the UI text
+        countTextW.text = "" + units.Length.ToString();
+    }
     public void ClassBonuses()
     {
         ApplyClassBonuses();
