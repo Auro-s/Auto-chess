@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Reference to the player's money text
+    public TextMeshProUGUI moneyText;
+    public int playerMoney = 10;
     void Start()
     {
-        
+        // Set up the initial money
+        UpdateMoneyText();
     }
-
-    // Update is called once per frame
-    void Update()
+    void UpdateMoneyText()
     {
-        
+        moneyText.text = "" + playerMoney;
     }
 }

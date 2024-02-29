@@ -23,7 +23,7 @@ public class ClassManager : MonoBehaviour
         }
     }
 
-    void Start()
+    public void ClassBonuses()
     {
         ApplyClassBonuses();
     }
