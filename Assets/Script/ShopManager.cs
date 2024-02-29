@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class ShopManager : MonoBehaviour
@@ -12,7 +11,7 @@ public class ShopManager : MonoBehaviour
         // Set up the initial money
         UpdateMoneyText();
     }
-    void UpdateMoneyText()
+    public void UpdateMoneyText()
     {
         moneyText.text = "" + playerMoney;
     }
