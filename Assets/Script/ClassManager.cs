@@ -8,8 +8,11 @@ public class ClassManager : MonoBehaviour
     public static ClassManager Instance; 
 
     public TextMeshProUGUI countTextW;
-    public float warriorHealthBonus = 10f;
-    public float tankDefenseBonus = 2f;
+    public float warriorHealthBonus = 100f;
+    public float tankDefenseBonus = 50f;
+    public float assasinDamageBonus = 50f;
+    public float archeMovementBonus = 2f;
+    public float mageAtksBonus = 0.2f;
 
     void Awake()
     {
@@ -42,7 +45,10 @@ public class ClassManager : MonoBehaviour
         // Find every unit with the "Warrior" faction
         Unit[] warriorUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Warrior").Select(go => go.GetComponent<Unit>()).ToArray();
         Unit[] tankUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Tank").Select(go => go.GetComponent<Unit>()).ToArray();
-       
+        Unit[] archerUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Archer").Select(go => go.GetComponent<Unit>()).ToArray();
+        Unit[] mageUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Mage").Select(go => go.GetComponent<Unit>()).ToArray();
+        Unit[] assassinUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Mage").Select(go => go.GetComponent<Unit>()).ToArray();
+
         // Find every ally unit and apply bonus health for each warrior unit
         foreach (GameObject allyUnit in GameObject.FindGameObjectsWithTag("Ally"))
         {
@@ -53,6 +59,18 @@ public class ClassManager : MonoBehaviour
             foreach (Unit tankUnit in tankUnits)
             {
                 allyUnit.GetComponent<Unit>().defense += tankDefenseBonus;
+            }
+            foreach (Unit archerUnit in archerUnits)
+            {
+                allyUnit.GetComponent<Unit>().movementSpeed += archeMovementBonus;
+            }
+            foreach (Unit mageUnit in mageUnits)
+            {
+                allyUnit.GetComponent<Unit>().attackSpeed += mageAtksBonus;
+            }
+            foreach (Unit assassinUnit in assassinUnits)
+            {
+                allyUnit.GetComponent<Unit>().damage += assasinDamageBonus;
             }
         }
     }
