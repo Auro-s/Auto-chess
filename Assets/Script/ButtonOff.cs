@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonOff : MonoBehaviour
-{
-    public void Off()
+{ 
+        public void Off()
     {
         gameObject.SetActive(false);
     }

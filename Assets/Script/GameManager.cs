@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public float checkInterval = 0.2f; // How often to check for nearby units
-    public List<Unit> allUnits = new List<Unit>();// Reference to all units in the game
+    //public List<Unit> allUnits = new List<Unit>();// Reference to all units in the game
     public Button endButton;
     public bool isPaused = true;
 
@@ -29,19 +29,19 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    void Start()
+    /*void Start()
     {
         // Populate the 'allUnits' list with references to all Unit components in the scene
         allUnits.AddRange(FindObjectsOfType<Unit>());
 
         // Start the automatic attack routine
         InvokeRepeating("AutoAttack", 0f, checkInterval);
-    }
+    }*/
 
     public void StartFight()
     {
         isPaused = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     public void DisableDrag()
     {
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void AutoAttack()
+    /*void AutoAttack()
     {
         if (!isPaused)
         {
@@ -82,9 +82,9 @@ public class GameManager : MonoBehaviour
             }
         }
         CheckGameEnd();
-    }
+    }*/
 
-    Unit FindNearestUnitWithTag(Unit unit, string tag)
+    /*Unit FindNearestUnitWithTag(Unit unit, string tag)
     {
         // Check if the unit is null before attempting to access its transform
         if (unit == null)
@@ -97,9 +97,9 @@ public class GameManager : MonoBehaviour
 
         // Find the nearest unit
         return unitsWithTag.OrderBy(u => Vector3.Distance(unit.transform.position, u.transform.position)).FirstOrDefault();
-    }
+    }*/
 
-    void CheckGameEnd()
+    void Update()
     {
         // Check if all ally units are dead
         bool allAllyUnitsDead = !GameObject.FindGameObjectsWithTag("Ally").Any();

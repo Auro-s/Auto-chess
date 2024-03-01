@@ -15,10 +15,11 @@ public class ClassManager : MonoBehaviour
     public float warriorHealthBonus = 100f;
     public float tankDefenseBonus = 50f;
     public float assasinDamageBonus = 50f;
-    public float archeMovementBonus = 2f;
+    public float archerCritBonus = 0.1f;
     public float mageAtksBonus = 0.2f;
+    public List<Unit> allUnits;
 
-    void Awake()
+    /*void Awake()
     {
         // Ensure there's only one instance of ClassManager
         if (Instance == null)
@@ -30,7 +31,7 @@ public class ClassManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
     void Update()
     {
         // Find all units and filter by the specified faction
@@ -46,6 +47,26 @@ public class ClassManager : MonoBehaviour
         countTextAS.text = "" + unitAS.Length.ToString();
         countTextM.text = "" + unitM.Length.ToString();
         countTextT.text = "" + unitT.Length.ToString();
+    }
+    public void UpdateHealth()
+    {
+        // Populate the 'allUnits' list with references to all Unit components in the scene
+        allUnits.AddRange(FindObjectsOfType<Unit>());
+
+        // Set the health of every unit to their maxHealth
+        SetHealthToMax();
+    }
+
+    void SetHealthToMax()
+    {
+        foreach (Unit unit in allUnits)
+        {
+            if (unit != null)
+            {
+                // Set the unit's health to its maxHealth
+                unit.health = unit.maxHealth;
+            }
+        }
     }
     public void ClassBonuses()
     {
@@ -66,7 +87,7 @@ public class ClassManager : MonoBehaviour
         {
             foreach (Unit warriorUnit in warriorUnits)
             {
-                allyUnit.GetComponent<Unit>().health += warriorHealthBonus;
+                allyUnit.GetComponent<Unit>().maxHealth += warriorHealthBonus;
             }
             foreach (Unit tankUnit in tankUnits)
             {
@@ -74,7 +95,7 @@ public class ClassManager : MonoBehaviour
             }
             foreach (Unit archerUnit in archerUnits)
             {
-                allyUnit.GetComponent<Unit>().movementSpeed += archeMovementBonus;
+                allyUnit.GetComponent<Unit>().critHitChance += archerCritBonus; //questa da cambiare con critHit se possibile
             }
             foreach (Unit mageUnit in mageUnits)
             {

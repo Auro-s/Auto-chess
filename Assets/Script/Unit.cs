@@ -5,21 +5,25 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public float health = 100f;
+    public float maxHealth = 100f;
+    public float health;
     public float damage = 10f;
     public float defense = 5f;
     public float attackRange = 5f;
     public float attackSpeed = 1f;
     public float movementSpeed = 3f;
+    public float critHitChance = 0.2f;
     public int UnitCost = 0;
     public string faction;
-    
+    public List<Unit> allUnits = new List<Unit>();
+
 
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
 
     void Start()
     {
+        
         // Assign the target tag based on the unit's tag
         if (CompareTag("Ally"))
         {
@@ -43,12 +47,10 @@ public class Unit : MonoBehaviour
             }
             else
             {
-                // Example: Simulate attacking when in range
                 AttackNearestTarget();
             }
         }
     }
-
     private void MoveTowardsNearestTarget()
     {
         // Find the nearest target unit
@@ -64,8 +66,8 @@ public class Unit : MonoBehaviour
 
     private void AttackNearestTarget()
     {
-        // Example: Simulate attacking when in range
-        // Your attack logic goes here
+        // Simulate attacking when in range
+        
         Unit nearestTarget = FindNearestUnitWithTag(targetTag);
         if (nearestTarget != null)
         {
@@ -108,6 +110,27 @@ public class Unit : MonoBehaviour
         return nearestUnit;
     }
 
+    // method for attacking another unit
+    public void Attack(Unit target)
+    {
+        // Check if the target is not null
+        if (target != null)
+        {
+            // Check if enough time has passed since the last attack based on attack speed
+            if (Time.time - lastAttackTime >= 1f / attackSpeed)
+            {
+                // Check for a critical hit
+                bool isCritHit = Random.value <= critHitChance;
+
+                // Calculate damage, considering critical hit
+                float finalDamage = isCritHit ? damage * 1.5f : damage;
+
+                // Perform attack logic 
+                target.TakeDamage(finalDamage);
+                lastAttackTime = Time.time; // Update last attack time
+            }
+        }
+    }
     // Handle taking damage
     public void TakeDamage(float amount)
     {
@@ -120,25 +143,9 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // Example method for attacking another unit
-    public void Attack(Unit target)
-    {
-        // Check if the target is not null
-        if (target != null)
-        {
-            // Check if enough time has passed since the last attack based on attack speed
-            if (Time.time - lastAttackTime >= 1f / attackSpeed)
-            {
-                // Perform attack logic here
-                target.TakeDamage(damage);
-                lastAttackTime = Time.time; // Update last attack time
-            }
-        }
-    }
-
     void Die()
     {
-        // Handle death logic here
+        // Handle death logic
         Destroy(gameObject);
     }
 }
