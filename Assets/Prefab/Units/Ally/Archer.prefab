@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 41f3505523cfd4f47b55e3a400dfe318, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d0ad8111ee336343b96b4151e99091b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,12 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: defe13d4bcc74184fb30c7f7cade2ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  damage: 400
-  defense: 250
-  attackRange: 1
-  attackSpeed: 1
-  movementSpeed: 3
+  health: 60
+  damage: 500
+  defense: 100
+  attackRange: 4
+  attackSpeed: 1.5
+  movementSpeed: 4
   UnitCost: 3
   faction: Archer
 --- !u!114 &2213173261928891892

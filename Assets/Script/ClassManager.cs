@@ -8,6 +8,10 @@ public class ClassManager : MonoBehaviour
     public static ClassManager Instance; 
 
     public TextMeshProUGUI countTextW;
+    public TextMeshProUGUI countTextA;
+    public TextMeshProUGUI countTextAS;
+    public TextMeshProUGUI countTextM;
+    public TextMeshProUGUI countTextT;
     public float warriorHealthBonus = 100f;
     public float tankDefenseBonus = 50f;
     public float assasinDamageBonus = 50f;
@@ -30,10 +34,18 @@ public class ClassManager : MonoBehaviour
     void Update()
     {
         // Find all units and filter by the specified faction
-        Unit[] units = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Warrior").ToArray();
+        Unit[] unitW = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Warrior").ToArray();
+        Unit[] unitA = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Archer").ToArray();
+        Unit[] unitAS = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Assassin").ToArray();
+        Unit[] unitM = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Mage").ToArray();
+        Unit[] unitT = FindObjectsOfType<Unit>().Where(unit => unit.faction == "Tank").ToArray();
 
         // Display the count of units in the UI text
-        countTextW.text = "" + units.Length.ToString();
+        countTextW.text = "" + unitW.Length.ToString();
+        countTextA.text = "" + unitA.Length.ToString();
+        countTextAS.text = "" + unitAS.Length.ToString();
+        countTextM.text = "" + unitM.Length.ToString();
+        countTextT.text = "" + unitT.Length.ToString();
     }
     public void ClassBonuses()
     {
