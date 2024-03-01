@@ -48,26 +48,7 @@ public class ClassManager : MonoBehaviour
         countTextM.text = "" + unitM.Length.ToString();
         countTextT.text = "" + unitT.Length.ToString();
     }
-    public void UpdateHealth()
-    {
-        // Populate the 'allUnits' list with references to all Unit components in the scene
-        allUnits.AddRange(FindObjectsOfType<Unit>());
 
-        // Set the health of every unit to their maxHealth
-        SetHealthToMax();
-    }
-
-    void SetHealthToMax()
-    {
-        foreach (Unit unit in allUnits)
-        {
-            if (unit != null)
-            {
-                // Set the unit's health to its maxHealth
-                unit.health = unit.maxHealth;
-            }
-        }
-    }
     public void ClassBonuses()
     {
         ApplyClassBonuses();
@@ -87,7 +68,7 @@ public class ClassManager : MonoBehaviour
         {
             foreach (Unit warriorUnit in warriorUnits)
             {
-                allyUnit.GetComponent<Unit>().maxHealth += warriorHealthBonus;
+                allyUnit.GetComponent<Unit>().health += warriorHealthBonus;
             }
             foreach (Unit tankUnit in tankUnits)
             {

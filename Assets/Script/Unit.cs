@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    public float health;
+    public float health = 1000f;
     public float damage = 10f;
     public float defense = 5f;
     public float attackRange = 5f;
@@ -15,9 +14,12 @@ public class Unit : MonoBehaviour
     public float critHitChance = 0.2f;
     public int UnitCost = 0;
     public string faction;
+
+
     public List<Unit> allUnits = new List<Unit>();
 
 
+    private GameObject healthBarSpriteInstance;
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
 
@@ -33,6 +35,7 @@ public class Unit : MonoBehaviour
         {
             targetTag = "Ally";
         }
+
     }
 
     void Update()
@@ -51,6 +54,7 @@ public class Unit : MonoBehaviour
             }
         }
     }
+
     private void MoveTowardsNearestTarget()
     {
         // Find the nearest target unit
@@ -142,7 +146,6 @@ public class Unit : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
         // Handle death logic

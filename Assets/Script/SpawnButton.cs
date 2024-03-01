@@ -23,8 +23,11 @@ public class UnitSpawnButton : MonoBehaviour
             shopManager.playerMoney -= unitCost;
             shopManager.UpdateMoneyText(); // Update the money display
 
+            float randomX = Random.Range(-5f, -1f); 
+            float randomY = Random.Range(-2f, 2f);
+
             // Spawn the unit at Vector3.zero with no rotation
-            Instantiate(unitPrefab, Vector3.zero, Quaternion.identity);
+            Instantiate(unitPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
         }
         else
         {
