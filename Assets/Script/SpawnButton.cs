@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-public class UnitSpawnButton : MonoBehaviour
+public class SpawnButton : MonoBehaviour
 {
     // Reference to the unit prefab
     public GameObject unitPrefab;
@@ -10,11 +10,16 @@ public class UnitSpawnButton : MonoBehaviour
     private float messageDuration = 2f;
     public void SpawnUnit()
     {
+        ShopManager shopManager = FindObjectOfType<ShopManager>();
+
+        if (shopManager != null && ShopManager.Instance.currentUnitCount == ShopManager.Instance.maxUnitCount)
+        {
+            // Show an error message or handle it in a way that fits your game logic
+            DisplayMessage("Max unit count reached!");
+            return; // Exit the function to prevent further execution
+        }
         // Access the UnitCost from the Unit script
         int unitCost = unitPrefab.GetComponent<Unit>().UnitCost;
-
-        // Reference to the ShopManager script
-        ShopManager shopManager = FindObjectOfType<ShopManager>();
 
         // Check if the player has enough money
         if (shopManager != null && shopManager.playerMoney >= unitCost)
@@ -28,6 +33,7 @@ public class UnitSpawnButton : MonoBehaviour
 
             // Spawn the unit at Vector3.zero with no rotation
             Instantiate(unitPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+            gameObject.SetActive(false);
         }
         else
         {

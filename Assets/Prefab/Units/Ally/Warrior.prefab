@@ -168,8 +168,10 @@ MonoBehaviour:
   attackRange: 1
   attackSpeed: 1
   movementSpeed: 3
+  critHitChance: 0.2
   UnitCost: 3
   faction: Warrior
+  allUnits: []
 --- !u!114 &2213173261928891892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5aba9f1bc2da340a72f37eed871290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundaryXMin: -5.5
+  boundaryXMax: -0.5
+  boundaryYMin: -2.5
+  boundaryYMax: 2.5

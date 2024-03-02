@@ -15,11 +15,8 @@ public class Unit : MonoBehaviour
     public int UnitCost = 0;
     public string faction;
 
-
     public List<Unit> allUnits = new List<Unit>();
 
-
-    private GameObject healthBarSpriteInstance;
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
 

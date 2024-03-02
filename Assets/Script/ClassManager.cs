@@ -19,19 +19,6 @@ public class ClassManager : MonoBehaviour
     public float mageAtksBonus = 0.2f;
     public List<Unit> allUnits;
 
-    /*void Awake()
-    {
-        // Ensure there's only one instance of ClassManager
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }*/
     void Update()
     {
         // Find all units and filter by the specified faction
@@ -76,7 +63,7 @@ public class ClassManager : MonoBehaviour
             }
             foreach (Unit archerUnit in archerUnits)
             {
-                allyUnit.GetComponent<Unit>().critHitChance += archerCritBonus; //questa da cambiare con critHit se possibile
+                allyUnit.GetComponent<Unit>().critHitChance += archerCritBonus; 
             }
             foreach (Unit mageUnit in mageUnits)
             {
