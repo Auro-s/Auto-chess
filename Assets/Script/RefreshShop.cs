@@ -9,7 +9,7 @@ public class RefreshShop : MonoBehaviour
     public GameObject[] targetButton;
     public int refreshCost = 2;
     public TextMeshProUGUI messageText;
-    private float messageDuration = 2f;
+    private readonly float messageDuration = 2f;
 
     // Method to toggle the activation status of the button
     public void ToggleButton()

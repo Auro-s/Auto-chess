@@ -7,7 +7,7 @@ public class SpawnButton : MonoBehaviour
     public GameObject unitPrefab;
     public TextMeshProUGUI messageText;
 
-    private float messageDuration = 2f;
+    private readonly float messageDuration = 2f;
     public void SpawnUnit()
     {
         ShopManager shopManager = FindObjectOfType<ShopManager>();
@@ -19,7 +19,7 @@ public class SpawnButton : MonoBehaviour
             return; // Exit the function to prevent further execution
         }
         // Access the UnitCost from the Unit script
-        int unitCost = unitPrefab.GetComponent<Unit>().UnitCost;
+        int unitCost = unitPrefab.GetComponent<Unit>().unitCost;
 
         // Check if the player has enough money
         if (shopManager != null && shopManager.playerMoney >= unitCost)

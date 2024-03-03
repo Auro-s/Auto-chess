@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Unit : MonoBehaviour
 {
@@ -12,14 +14,14 @@ public class Unit : MonoBehaviour
     public float attackSpeed = 1f;
     public float movementSpeed = 3f;
     public float critHitChance = 0.2f;
-    public int UnitCost = 0;
+    public int unitCost = 3;
     public string faction;
 
-    public List<Unit> allUnits = new List<Unit>();
+    public List<Unit> allUnits = new();
 
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
-
+    
     void Start()
     {
         
@@ -32,7 +34,7 @@ public class Unit : MonoBehaviour
         {
             targetTag = "Ally";
         }
-
+        
     }
 
     void Update()
@@ -61,7 +63,7 @@ public class Unit : MonoBehaviour
         if (nearestTarget != null)
         {
             Vector3 direction = (nearestTarget.transform.position - transform.position).normalized;
-            transform.Translate(direction * movementSpeed * Time.deltaTime);
+            transform.Translate(movementSpeed * Time.deltaTime * direction);
         }
     }
 

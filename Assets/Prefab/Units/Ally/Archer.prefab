@@ -169,7 +169,7 @@ MonoBehaviour:
   attackSpeed: 1
   movementSpeed: 3
   critHitChance: 0.2
-  UnitCost: 3
+  unitCost: 3
   faction: Archer
   allUnits: []
 --- !u!114 &2213173261928891892

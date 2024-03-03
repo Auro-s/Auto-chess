@@ -44,9 +44,8 @@ public class GameManager : MonoBehaviour
 
             foreach (Unit unit in units)
             {
-                Rigidbody2D unitRb = unit.GetComponent<Rigidbody2D>();
-
-                if (unitRb != null)
+                
+                if (unit.TryGetComponent<Rigidbody2D>(out var unitRb))
                 {
                     unitRb.bodyType = RigidbodyType2D.Kinematic;
                 }
@@ -61,9 +60,8 @@ public class GameManager : MonoBehaviour
 
         foreach (Unit unit in units)
         {
-            Rigidbody2D unitRb = unit.GetComponent<Rigidbody2D>();
-
-            if (unitRb != null)
+            
+            if (unit.TryGetComponent<Rigidbody2D>(out var unitRb))
             {
                 unitRb.bodyType = RigidbodyType2D.Dynamic;
             }
@@ -76,9 +74,8 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject allyGameObject in allyGameObjects)
         {
-            Draggable draggableComponent = allyGameObject.GetComponent<Draggable>();
-
-            if (draggableComponent != null)
+            
+            if (allyGameObject.TryGetComponent<Draggable>(out var draggableComponent))
             {
                 draggableComponent.enabled = false;
             }
