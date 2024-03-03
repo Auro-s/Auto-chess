@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,8 +8,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Button endButton;
+    public Button startButton;
+    public TextMeshProUGUI messageText;
     public bool isPaused = true;
 
+    private readonly float messageDuration = 2f;
     public bool IsPaused()
     {
         return isPaused;
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
         bool allEnemyUnitsDead = !GameObject.FindGameObjectsWithTag("Enemy").Any();
 
         // Activate the end button if all ally or enemy units are dead
-        if (allAllyUnitsDead || allEnemyUnitsDead)
+        if (!isPaused && allAllyUnitsDead || allEnemyUnitsDead)
         {
             endButton.gameObject.SetActive(true);
             isPaused = true; // Pause the game when the end button is active
@@ -52,21 +55,37 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
     public void StartFight()
     {
-        isPaused = false;
+        // Find all units in the scene
         Unit[] units = FindObjectsOfType<Unit>();
 
-        foreach (Unit unit in units)
+        // Check if there are any units with the "Ally" tag
+        if (units.Any(unit => unit.CompareTag("Ally")))
         {
-            
-            if (unit.TryGetComponent<Rigidbody2D>(out var unitRb))
+            // If there are, unpause the game and enable unit movement
+            isPaused = false;
+
+            // Enable Rigidbody2D for ally units
+            foreach (Unit unit in units)
             {
-                unitRb.bodyType = RigidbodyType2D.Dynamic;
+                if (unit.CompareTag("Ally") && unit.TryGetComponent<Rigidbody2D>(out var unitRb))
+                {
+                    unitRb.bodyType = RigidbodyType2D.Dynamic;
+                }
+            }
+            // Disable drag for ally units
+            DisableDrag();
+            if (startButton != null)
+            {
+                startButton.gameObject.SetActive(false);
             }
         }
-        DisableDrag();
+        else
+        {
+            DisplayMessage("No units on field");
+        }
     }
     public void DisableDrag()
     {
@@ -81,7 +100,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync(1);
@@ -89,5 +107,17 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    private void DisplayMessage(string message)
+    {
+        messageText.text = message;
+        StartCoroutine(HideMessage());
+    }
+
+    // Coroutine to hide the message after a certain duration
+    private IEnumerator HideMessage()
+    {
+        yield return new WaitForSeconds(messageDuration);
+        messageText.text = ""; // Clear the message
     }
 }

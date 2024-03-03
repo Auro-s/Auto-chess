@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI unitCountText;
     public TextMeshProUGUI messageText;
+    public Button sellButton;
 
     public int playerMoney = 10;
     public int currentUnitCount = 0;
@@ -44,6 +45,14 @@ public class ShopManager : MonoBehaviour
         if (sellMode)
         {
             TrySellUnit();
+            Image buttonImage = sellButton.GetComponent<Image>();
+            buttonImage.color = Color.red;
+        }
+        if (!sellMode)
+        {
+            TrySellUnit();
+            Image buttonImage = sellButton.GetComponent<Image>();
+            buttonImage.color = Color.white;
         }
     }
     public void UpdateMoneyText()
