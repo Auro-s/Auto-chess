@@ -44,13 +44,13 @@ public class ShopManager : MonoBehaviour
     UpdateUnitCountText();
         if (sellMode)
         {
-            TrySellUnit();
+            SellUnit();
             Image buttonImage = sellButton.GetComponent<Image>();
             buttonImage.color = Color.red;
         }
         if (!sellMode)
         {
-            TrySellUnit();
+            SellUnit();
             Image buttonImage = sellButton.GetComponent<Image>();
             buttonImage.color = Color.white;
         }
@@ -104,7 +104,7 @@ public class ShopManager : MonoBehaviour
     {
         sellMode = true;
     }
-    private void TrySellUnit()
+    private void SellUnit()
     {
         if (sellMode && Input.GetMouseButtonDown(0))
         {
@@ -118,7 +118,7 @@ public class ShopManager : MonoBehaviour
                 GameObject hitObject = hit.collider.gameObject;
 
                 // Check if the hit object has the Unit script
-                if (hitObject.TryGetComponent<Unit>(out var unit))
+                if (hitObject.CompareTag("Ally") && hitObject.TryGetComponent<Unit>(out var unit))
                 {
                     // Increase player money by the unit cost
                     playerMoney += unit.unitCost - 1;
@@ -128,7 +128,6 @@ public class ShopManager : MonoBehaviour
                     Destroy(hitObject);
                 }
             }
-
             // Exit sell mode after attempting to sell a unit
             sellMode = false;
         }

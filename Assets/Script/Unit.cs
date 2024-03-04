@@ -1,12 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.UI;
 using UnityEngine;
-using Unity.VisualScripting;
+using TMPro;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
+    public float maxHealth = 1000;
     public float health = 1000f;
     public float damage = 10f;
     public float defense = 5f;
@@ -16,8 +16,7 @@ public class Unit : MonoBehaviour
     public float critHitChance = 0.2f;
     public int unitCost = 3;
     public string faction;
-
-    public List<Unit> allUnits = new();
+    public TextMeshPro healthbar;
 
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
@@ -34,7 +33,7 @@ public class Unit : MonoBehaviour
         {
             targetTag = "Ally";
         }
-        
+        UpdateHealth();
     }
 
     void Update()
@@ -52,8 +51,12 @@ public class Unit : MonoBehaviour
                 AttackNearestTarget();
             }
         }
+        UpdateHealth();
     }
-
+    void UpdateHealth()
+    {
+        healthbar.text = health + "/" + maxHealth;
+    }
     private void MoveTowardsNearestTarget()
     {
         // Find the nearest target unit

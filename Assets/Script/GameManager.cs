@@ -100,6 +100,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void UpgradeUnit()
+    {
+        
+    }
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync(1);
