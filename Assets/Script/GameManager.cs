@@ -7,32 +7,41 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Button endButton;
+    public Button loseButton;
+    public Button winButton;
     public Button startButton;
+
     public TextMeshProUGUI messageText;
 
+    public GameObject[] secondFight;
+    public GameObject[] thirdFight;
+
     public bool isPaused = true;
+    public bool isFirstFight = true;
 
     private readonly float messageDuration = 2f;
 
     private readonly int maxRaycastDistance = 100;
+
+    public static GameManager Instance;
     public bool IsPaused()
     {
         return isPaused;
     }
-    
-    private static GameManager _instance;
-    public static GameManager Instance
+    private void Awake()
     {
-        get
+        // Singleton pattern to ensure there is only one instance
+        if (Instance == null)
         {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<GameManager>();
-            }
-            return _instance;
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scenes
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
+
     void Update()
     {
         // Check if all ally units are dead
@@ -42,12 +51,18 @@ public class GameManager : MonoBehaviour
         bool allEnemyUnitsDead = !GameObject.FindGameObjectsWithTag("Enemy").Any();
 
         // Activate the end button if all ally or enemy units are dead
-        if (!isPaused && allAllyUnitsDead || allEnemyUnitsDead)
+        if (!isPaused && allAllyUnitsDead)
         {
-            endButton.gameObject.SetActive(true);
+            loseButton.gameObject.SetActive(true);
             isPaused = true; // Pause the game when the end button is active
-
         }
+
+        if (!isPaused && allEnemyUnitsDead)
+        {
+            winButton.gameObject.SetActive(true);
+            isPaused = true;
+        }
+
         if (isPaused)
         {
             UpgradeUnit();
@@ -63,7 +78,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     public void StartFight()
     {
         // Find all units in the scene
@@ -85,10 +99,7 @@ public class GameManager : MonoBehaviour
             }
             // Disable drag for ally units
             DisableDrag();
-            if (startButton != null)
-            {
-                startButton.gameObject.SetActive(false);
-            }
+            startButton.gameObject.SetActive(false);
         }
         else
         {
@@ -101,10 +112,21 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject allyGameObject in allyGameObjects)
         {
-            
             if (allyGameObject.TryGetComponent<Draggable>(out var draggableComponent))
             {
                 draggableComponent.enabled = false;
+            }
+        }
+    }
+    public void AbleDrag()
+    {
+        GameObject[] allyGameObjects = GameObject.FindGameObjectsWithTag("Ally");
+
+        foreach (GameObject allyGameObject in allyGameObjects)
+        {
+            if (allyGameObject.TryGetComponent<Draggable>(out var draggableComponent))
+            {
+                draggableComponent.enabled = true;
             }
         }
     }
@@ -144,38 +166,75 @@ public class GameManager : MonoBehaviour
                         // Increment the upgrade level for the specific unit
                         unit.upgradeLevel++;
 
-                        Debug.Log("Unit upgraded to level " + unit.upgradeLevel);
                     }
                     else if (unit.upgradeLevel >= unit.maxUpgradeLevel)
                     {
-                        Debug.Log("Unit has reached the maximum upgrade level!");
+                        DisplayMessage("Unit has reached the maximum upgrade level!");
                     }
                     else
                     {
-                        Debug.Log("Not enough money to upgrade!");
+                        DisplayMessage("Not enough money to upgrade!");
                     }
                 }
             }
         }
     }
-    public void MainMenu()
+    public void NextFight()
     {
-        SceneManager.LoadSceneAsync(1);
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
+        if (isFirstFight)
+        {
+            foreach (GameObject unit in secondFight)
+            {
+                if (unit != null)
+                {
+                    unit.SetActive(true);
+                    Draggable draggableComponent = unit.GetComponent<Draggable>();
+                    if (draggableComponent != null)
+                    {
+                        unit.transform.position = draggableComponent.initialPosition;
+                    }
+                }
+            }
+            winButton.gameObject.SetActive(false);
+            startButton.gameObject.SetActive(true);
+            isFirstFight = false;
+            AbleDrag();
+        }
+        else if (!isFirstFight)
+        {
+            foreach (GameObject unit in thirdFight)
+            {
+                if (unit != null)
+                {
+                    unit.SetActive(true);
+                    Draggable draggableComponent = unit.GetComponent<Draggable>();
+                    if (draggableComponent != null)
+                    {
+                        unit.transform.position = draggableComponent.initialPosition;
+                    }
+                }
+            }
+            winButton.gameObject.SetActive(false);
+            AbleDrag();
+        }
     }
     private void DisplayMessage(string message)
     {
         messageText.text = message;
         StartCoroutine(HideMessage());
     }
-
     // Coroutine to hide the message after a certain duration
     private IEnumerator HideMessage()
     {
         yield return new WaitForSeconds(messageDuration);
         messageText.text = ""; // Clear the message
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

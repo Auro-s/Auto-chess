@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-    private Vector2 initialPosition;
+    public Vector2 initialPosition;
     private Collider2D unitCollider;
     private bool isDragging = false;
     public float boundaryXMin, boundaryXMax, boundaryYMin, boundaryYMax;
@@ -28,21 +28,18 @@ public class Draggable : MonoBehaviour
             transform.position = new Vector2(clampedX, clampedY);
         }
     }
-
-    void OnMouseDown()
+     public void OnMouseDown()
     {
         // Store the initial position when the unit is clicked
         initialPosition = transform.position;
         isDragging = true;
     }
-
     void OnMouseUp()
     {
         isDragging = false;
         // Check for valid placement and return to the initial position if needed
         CheckValidPlacement();
     }
-
     void CheckValidPlacement()
     {
         // Clamp the final position within the boundaries
