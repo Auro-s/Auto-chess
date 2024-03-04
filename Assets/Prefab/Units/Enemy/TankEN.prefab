@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5181540251114115757}
@@ -129,14 +129,18 @@ MonoBehaviour:
   maxHealth: 1000
   health: 1000
   damage: 400
-  defense: 250
+  defense: 200
   attackRange: 1
   attackSpeed: 1
   movementSpeed: 3
   critHitChance: 0.2
+  upgradeMultiplier: 1.5
   unitCost: 3
+  upgradeCost: 5
+  upgradeLevel: 0
+  maxUpgradeLevel: 3
   faction: 
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 5955495146684241227}
 --- !u!1 &8656552967294949107
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,8 +269,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 1

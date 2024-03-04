@@ -3,27 +3,35 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Unit : MonoBehaviour
 {
     public float maxHealth = 1000;
-    public float health = 1000f;
+    public float health;
     public float damage = 10f;
     public float defense = 5f;
     public float attackRange = 5f;
     public float attackSpeed = 1f;
     public float movementSpeed = 3f;
     public float critHitChance = 0.2f;
-    public int unitCost = 3;
-    public string faction;
-    public TextMeshPro healthbar;
+    public float upgradeMultiplier = 1.5f;
 
+    public int unitCost = 3;
+    public int upgradeCost = 5;
+    public int upgradeLevel = 0;
+    public int maxUpgradeLevel = 3;
+
+    public string faction;
+
+    public TextMeshPro healthbar;
+    
     private float lastAttackTime;
+
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
     
     void Start()
     {
-        
         // Assign the target tag based on the unit's tag
         if (CompareTag("Ally"))
         {
@@ -35,7 +43,6 @@ public class Unit : MonoBehaviour
         }
         UpdateHealth();
     }
-
     void Update()
     {
         // Check if the game is not paused
@@ -53,9 +60,13 @@ public class Unit : MonoBehaviour
         }
         UpdateHealth();
     }
-    void UpdateHealth()
+    public void UpdateHealth()
     {
-        healthbar.text = health + "/" + maxHealth;
+        if (GameManager.Instance.isPaused)
+        {
+            health = maxHealth;
+        }
+        healthbar.text = health + "/" + upgradeLevel;
     }
     private void MoveTowardsNearestTarget()
     {
@@ -69,7 +80,6 @@ public class Unit : MonoBehaviour
             transform.Translate(movementSpeed * Time.deltaTime * direction);
         }
     }
-
     private void AttackNearestTarget()
     {
         // Simulate attacking when in range
@@ -80,7 +90,6 @@ public class Unit : MonoBehaviour
             Attack(nearestTarget);
         }
     }
-
     private bool IsInRangeOfTarget()
     {
         // Check if any target is in attack range
@@ -115,7 +124,6 @@ public class Unit : MonoBehaviour
 
         return nearestUnit;
     }
-
     // method for attacking another unit
     public void Attack(Unit target)
     {

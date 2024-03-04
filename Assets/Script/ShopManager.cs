@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI unitCountText;
     public TextMeshProUGUI messageText;
+
     public Button sellButton;
 
     public int playerMoney = 10;
@@ -17,6 +18,7 @@ public class ShopManager : MonoBehaviour
     public int unitCountIncrementCost = 5; // Cost to increment max unit count
 
     private readonly float messageDuration = 2f;
+
     private readonly int maxRaycastDistance = 100;
 
     private bool sellMode = false;

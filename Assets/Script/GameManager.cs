@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public Button endButton;
     public Button startButton;
     public TextMeshProUGUI messageText;
+
     public bool isPaused = true;
 
     private readonly float messageDuration = 2f;
+
+    private readonly int maxRaycastDistance = 100;
     public bool IsPaused()
     {
         return isPaused;
@@ -43,11 +46,16 @@ public class GameManager : MonoBehaviour
         {
             endButton.gameObject.SetActive(true);
             isPaused = true; // Pause the game when the end button is active
+
+        }
+        if (isPaused)
+        {
+            UpgradeUnit();
             Unit[] units = FindObjectsOfType<Unit>();
 
             foreach (Unit unit in units)
             {
-                
+
                 if (unit.TryGetComponent<Rigidbody2D>(out var unitRb))
                 {
                     unitRb.bodyType = RigidbodyType2D.Kinematic;
@@ -102,7 +110,53 @@ public class GameManager : MonoBehaviour
     }
     public void UpgradeUnit()
     {
-        
+        // Check if the right mouse button is pressed
+        if (Input.GetMouseButtonDown(1))
+        {
+            // Cast a ray from the mouse position to the world
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            // Check if the ray hits a unit
+            if (Physics2D.Raycast(ray.origin, ray.direction, maxRaycastDistance))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, maxRaycastDistance);
+                GameObject hitObject = hit.collider.gameObject;
+
+                // Check if the hit object has the Unit script
+                if (hitObject.TryGetComponent<Unit>(out Unit unit) && unit.CompareTag("Ally"))
+                {
+                    // Check if the player has enough money to upgrade and the upgrade level is below the maximum
+                    if (ShopManager.Instance.playerMoney >= unit.upgradeCost && unit.upgradeLevel < unit.maxUpgradeLevel)
+                    {
+                        // Deduct the upgrade cost from the player's money
+                        ShopManager.Instance.playerMoney -= unit.upgradeCost;
+                        ShopManager.Instance.UpdateMoneyText(); // Update the money display
+
+                        // Increase unit statistics
+                        unit.maxHealth *= unit.upgradeMultiplier;
+                        unit.damage *= unit.upgradeMultiplier;
+                        unit.defense *= unit.upgradeMultiplier;
+                        unit.unitCost += 3;
+
+                        // Update the health text after the upgrade
+                        unit.UpdateHealth();
+
+                        // Increment the upgrade level for the specific unit
+                        unit.upgradeLevel++;
+
+                        Debug.Log("Unit upgraded to level " + unit.upgradeLevel);
+                    }
+                    else if (unit.upgradeLevel >= unit.maxUpgradeLevel)
+                    {
+                        Debug.Log("Unit has reached the maximum upgrade level!");
+                    }
+                    else
+                    {
+                        Debug.Log("Not enough money to upgrade!");
+                    }
+                }
+            }
+        }
     }
     public void MainMenu()
     {
