@@ -10,17 +10,13 @@ public class GameManager : MonoBehaviour
     public Button loseButton;
     public Button winButton;
     public Button startButton;
-
     public TextMeshProUGUI messageText;
-
     public GameObject[] secondFight;
     public GameObject[] thirdFight;
-
     public bool isPaused = true;
     public bool isFirstFight = true;
 
     private readonly float messageDuration = 2f;
-
     private readonly int maxRaycastDistance = 100;
 
     public static GameManager Instance;
@@ -41,7 +37,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     void Update()
     {
         // Check if all ally units are dead
@@ -183,18 +178,6 @@ public class GameManager : MonoBehaviour
     {
         if (isFirstFight)
         {
-            foreach (GameObject unit in secondFight)
-            {
-                if (unit != null)
-                {
-                    unit.SetActive(true);
-                    Draggable draggableComponent = unit.GetComponent<Draggable>();
-                    if (draggableComponent != null)
-                    {
-                        unit.transform.position = draggableComponent.initialPosition;
-                    }
-                }
-            }
             winButton.gameObject.SetActive(false);
             startButton.gameObject.SetActive(true);
             isFirstFight = false;
@@ -202,18 +185,6 @@ public class GameManager : MonoBehaviour
         }
         else if (!isFirstFight)
         {
-            foreach (GameObject unit in thirdFight)
-            {
-                if (unit != null)
-                {
-                    unit.SetActive(true);
-                    Draggable draggableComponent = unit.GetComponent<Draggable>();
-                    if (draggableComponent != null)
-                    {
-                        unit.transform.position = draggableComponent.initialPosition;
-                    }
-                }
-            }
             winButton.gameObject.SetActive(false);
             AbleDrag();
         }

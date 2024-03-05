@@ -13,7 +13,6 @@ public class Draggable : MonoBehaviour
         unitCollider = GetComponent<Collider2D>();
 
     }
-
     void Update()
     {
         if (isDragging)

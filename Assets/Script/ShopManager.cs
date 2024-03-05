@@ -9,18 +9,14 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI unitCountText;
     public TextMeshProUGUI messageText;
-
     public Button sellButton;
-
     public int playerMoney = 10;
     public int currentUnitCount = 0;
     public int maxUnitCount = 5; // Maximum allowed units
     public int unitCountIncrementCost = 5; // Cost to increment max unit count
 
     private readonly float messageDuration = 2f;
-
     private readonly int maxRaycastDistance = 100;
-
     private bool sellMode = false;
 
     private static ShopManager _instance;

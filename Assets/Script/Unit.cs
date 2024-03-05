@@ -13,18 +13,14 @@ public class Unit : MonoBehaviour
     public float movementSpeed = 3f;
     public float critHitChance = 0.2f;
     public float upgradeMultiplier = 1.5f;
-
     public int unitCost = 3;
     public int upgradeCost = 5;
     public int upgradeLevel = 0;
     public int maxUpgradeLevel = 3;
-
     public string faction;
-
     public TextMeshPro healthbar;
     
     private float lastAttackTime;
-
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
     
     void Start()
