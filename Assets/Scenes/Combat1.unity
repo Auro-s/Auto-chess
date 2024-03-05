@@ -1001,11 +1001,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 5984797521719183443, guid: b9acd3e9a019ecd41a333d88b39dfc6f, type: 3}
   messageText: {fileID: 8212058736449356197}
---- !u!1 &287452227 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5984797521719183443, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-  m_PrefabInstance: {fileID: 551237522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &353158652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,67 +1948,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539694509}
   m_CullTransparentMesh: 1
---- !u!1001 &551237522
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5984797521719183443, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_Name
-      value: TankEN (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984797521719183443, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
 --- !u!1 &565921015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2302,18 @@ MonoBehaviour:
       - m_Target: {fileID: 940346204}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: NextFight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 940346204}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ReplaceAllyPositions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2758,11 +2704,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779374728}
   m_CullTransparentMesh: 1
---- !u!1 &907160496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5984797521719183443, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-  m_PrefabInstance: {fileID: 1999074661}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &940346201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,10 +2752,8 @@ MonoBehaviour:
   winButton: {fileID: 662632531}
   startButton: {fileID: 2329474846076748569}
   messageText: {fileID: 8212058736449356197}
-  secondFight:
-  - {fileID: 907160496}
-  thirdFight:
-  - {fileID: 287452227}
+  secondFight: []
+  thirdFight: []
   isPaused: 1
   isFirstFight: 1
 --- !u!1 &1007997542
@@ -7023,67 +6962,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a71123747f331db4d8eaff4c1ef0b2a0, type: 3}
---- !u!1001 &1999074661
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5984797521719183443, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_Name
-      value: TankEN (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984797521719183443, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297070987461617273, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0efb95d4186b04d4ba0dbd5652ecb026, type: 3}
 --- !u!1 &2061670787
 GameObject:
   m_ObjectHideFlags: 0
@@ -8297,6 +8175,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 940346204}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StoreAllyPositions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ally
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!224 &2351209614290504988
@@ -11033,5 +10923,3 @@ SceneRoots:
   - {fileID: 1988832544}
   - {fileID: 26110988}
   - {fileID: 422590140}
-  - {fileID: 1999074661}
-  - {fileID: 551237522}

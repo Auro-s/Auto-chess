@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private readonly float messageDuration = 2f;
     private readonly int maxRaycastDistance = 100;
+    private readonly Dictionary<string, Vector3> allyPositions = new();
 
     public static GameManager Instance;
     public bool IsPaused()
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
         {
             winButton.gameObject.SetActive(true);
             isPaused = true;
+            ShopManager.Instance.playerMoney += 10;
+            ShopManager.Instance.UpdateMoneyText();
         }
 
         if (isPaused)
@@ -99,6 +103,31 @@ public class GameManager : MonoBehaviour
         else
         {
             DisplayMessage("No units on field");
+        }
+    }
+    public void StoreAllyPositions()
+    {
+        GameObject[] allyUnits = GameObject.FindGameObjectsWithTag("Ally");
+
+        foreach (GameObject allyUnit in allyUnits)
+        {
+            if (!allyPositions.ContainsKey(allyUnit.name))
+            {
+                allyPositions.Add(allyUnit.name, allyUnit.transform.position);
+            }
+        }
+    }
+    public void ReplaceAllyPositions()
+    {
+        GameObject[] allyUnits = GameObject.FindGameObjectsWithTag("Ally");
+
+        foreach (GameObject allyUnit in allyUnits)
+        {
+            if (allyPositions.ContainsKey(allyUnit.name))
+            {
+                // Set the position of the ally unit to the stored position
+                allyUnit.transform.position = allyPositions[allyUnit.name];
+            }
         }
     }
     public void DisableDrag()
@@ -174,10 +203,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void NextFight()
+    public void NextFight() //This only work if the fight are 3 and no more.
     {
         if (isFirstFight)
         {
+            foreach (GameObject unit in secondFight)
+            {
+                if (unit != null)
+                {
+                    unit.SetActive(true);
+                }
+            }
             winButton.gameObject.SetActive(false);
             startButton.gameObject.SetActive(true);
             isFirstFight = false;
@@ -185,6 +221,13 @@ public class GameManager : MonoBehaviour
         }
         else if (!isFirstFight)
         {
+            foreach (GameObject unit in thirdFight)
+            {
+                if (unit != null)
+                {
+                    unit.SetActive(true);
+                }
+            }
             winButton.gameObject.SetActive(false);
             AbleDrag();
         }
