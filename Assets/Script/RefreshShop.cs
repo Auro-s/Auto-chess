@@ -10,7 +10,7 @@ public class RefreshShop : MonoBehaviour
     public TextMeshProUGUI messageText;
     private readonly float messageDuration = 2f;
 
-    // Method to toggle the activation status of the button
+    // Toggle the activation status of the button
     public void ToggleButton()
     {
         ShopManager shopManager = FindObjectOfType<ShopManager>();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,13 +48,13 @@ public class GameManager : MonoBehaviour
         // Check if all enemy units are dead
         bool allEnemyUnitsDead = !GameObject.FindGameObjectsWithTag("Enemy").Any();
 
-        // Activate the end button if all ally or enemy units are dead
+        // Activate the end button if all allies are dead
         if (!isPaused && allAllyUnitsDead)
         {
             loseButton.gameObject.SetActive(true);
             isPaused = true; // Pause the game when the end button is active
         }
-
+        // Activate the win button if all enemies are dead
         if (!isPaused && allEnemyUnitsDead)
         {
             winButton.gameObject.SetActive(true);
@@ -85,7 +86,7 @@ public class GameManager : MonoBehaviour
         // Check if there are any units with the "Ally" tag
         if (units.Any(unit => unit.CompareTag("Ally")))
         {
-            // If there are, unpause the game and enable unit movement
+            // unpause the game and enable unit movement
             isPaused = false;
 
             // Enable Rigidbody2D for ally units

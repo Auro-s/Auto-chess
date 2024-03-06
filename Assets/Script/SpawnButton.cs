@@ -31,7 +31,7 @@ public class SpawnButton : MonoBehaviour
             float randomX = Random.Range(-5f, -1f); 
             float randomY = Random.Range(-2f, 2f);
 
-            // Spawn the unit at Vector3.zero with no rotation
+            // Spawn the unit at random Vector3
             Instantiate(unitPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
             gameObject.SetActive(false);
         }

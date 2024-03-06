@@ -53,6 +53,7 @@ public class Unit : MonoBehaviour
         }
         UpdateHealth();
     }
+    //set the health of units
     public void UpdateHealth()
     {
         if (GameManager.Instance.isPaused)
@@ -75,8 +76,7 @@ public class Unit : MonoBehaviour
     }
     private void AttackNearestTarget()
     {
-        // Simulate attacking when in range
-        
+        // attacking when in range
         Unit nearestTarget = FindNearestUnitWithTag(targetTag);
         if (nearestTarget != null)
         {

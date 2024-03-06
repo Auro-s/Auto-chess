@@ -43,14 +43,14 @@ public class ClassManager : MonoBehaviour
 
     void ApplyClassBonuses()
     {
-        // Find every unit with the "Warrior" faction
+        // Find every unit with faction
         Unit[] warriorUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Warrior").Select(go => go.GetComponent<Unit>()).ToArray();
         Unit[] tankUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Tank").Select(go => go.GetComponent<Unit>()).ToArray();
         Unit[] archerUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Archer").Select(go => go.GetComponent<Unit>()).ToArray();
         Unit[] mageUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Mage").Select(go => go.GetComponent<Unit>()).ToArray();
         Unit[] assassinUnits = GameObject.FindGameObjectsWithTag("Ally").Where(go => go.GetComponent<Unit>().faction == "Mage").Select(go => go.GetComponent<Unit>()).ToArray();
 
-        // Find every ally unit and apply bonus health for each warrior unit
+        // Find every ally unit and apply bonus for each unit
         foreach (GameObject allyUnit in GameObject.FindGameObjectsWithTag("Ally"))
         {
             foreach (Unit warriorUnit in warriorUnits)

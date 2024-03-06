@@ -35,7 +35,6 @@ public class ShopManager : MonoBehaviour
     {
         // Set up the initial money
         UpdateMoneyText();
-        
     }
     void Update()
     {
@@ -66,6 +65,10 @@ public class ShopManager : MonoBehaviour
         if (currentUnitCount == maxUnitCount)
         {
             unitCountText.color = Color.red;
+        }
+        if (currentUnitCount < maxUnitCount)
+        {
+            unitCountText.color = Color.white;
         }
     }
 
