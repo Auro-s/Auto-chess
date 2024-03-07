@@ -17,7 +17,7 @@ public class ClassManager : MonoBehaviour
     public float assasinDamageBonus = 50f;
     public float archerCritBonus = 0.1f;
     public float mageAtksBonus = 0.2f;
-    public List<Unit> allUnits;
+    private List<Unit> allUnits;
 
     void Update()
     {

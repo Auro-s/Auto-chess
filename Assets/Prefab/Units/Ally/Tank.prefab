@@ -339,16 +339,15 @@ MonoBehaviour:
   maxHealth: 2000
   health: 0
   damage: 450
-  defense: 400
+  defense: 300
   attackRange: 1
-  attackSpeed: 1
+  attackSpeed: 0.9
   movementSpeed: 3
   critHitChance: 0.2
-  upgradeMultiplier: 1.5
   unitCost: 3
   upgradeCost: 5
-  upgradeLevel: 0
-  maxUpgradeLevel: 3
+  Level: 1
+  maxLevel: 3
   faction: Tank
   healthbar: {fileID: 3636602665742719136}
 --- !u!114 &2213173261928891892
@@ -363,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5aba9f1bc2da340a72f37eed871290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPosition: {x: 0, y: 0}
   boundaryXMin: -5.5
   boundaryXMax: -0.5
   boundaryYMin: -2.5

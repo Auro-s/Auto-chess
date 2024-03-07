@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] thirdFight;
     public bool isPaused = true;
     public bool isFirstFight = true;
+    public float upgradeMultiplier = 1.5f;
 
     private readonly float messageDuration = 2f;
     private readonly int maxRaycastDistance = 100;
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         {
             winButton.gameObject.SetActive(true);
             isPaused = true;
-            ShopManager.Instance.playerMoney += 10;
+            ShopManager.Instance.playerMoney += 15;
             ShopManager.Instance.UpdateMoneyText();
         }
 
@@ -173,26 +173,26 @@ public class GameManager : MonoBehaviour
                 if (hitObject.TryGetComponent<Unit>(out Unit unit) && unit.CompareTag("Ally"))
                 {
                     // Check if the player has enough money to upgrade and the upgrade level is below the maximum
-                    if (ShopManager.Instance.playerMoney >= unit.upgradeCost && unit.upgradeLevel < unit.maxUpgradeLevel)
+                    if (ShopManager.Instance.playerMoney >= unit.upgradeCost && unit.Level < unit.maxLevel)
                     {
                         // Deduct the upgrade cost from the player's money
                         ShopManager.Instance.playerMoney -= unit.upgradeCost;
                         ShopManager.Instance.UpdateMoneyText(); // Update the money display
 
                         // Increase unit statistics
-                        unit.maxHealth *= unit.upgradeMultiplier;
-                        unit.damage *= unit.upgradeMultiplier;
-                        unit.defense *= unit.upgradeMultiplier;
+                        unit.maxHealth *= upgradeMultiplier;
+                        unit.damage *= upgradeMultiplier;
+                        unit.defense *= upgradeMultiplier;
                         unit.unitCost += 3;
 
                         // Update the health text after the upgrade
                         unit.UpdateHealth();
 
                         // Increment the upgrade level for the specific unit
-                        unit.upgradeLevel++;
+                        unit.Level++;
 
                     }
-                    else if (unit.upgradeLevel >= unit.maxUpgradeLevel)
+                    else if (unit.Level >= unit.maxLevel)
                     {
                         DisplayMessage("Unit has reached the maximum upgrade level!");
                     }
@@ -243,13 +243,5 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(messageDuration);
         messageText.text = ""; // Clear the message
-    }
-    public void MainMenu()
-    {
-        SceneManager.LoadSceneAsync(0);
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

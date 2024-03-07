@@ -12,7 +12,7 @@ public class ShopManager : MonoBehaviour
     public Button sellButton;
     public int playerMoney = 10;
     public int currentUnitCount = 0;
-    public int maxUnitCount = 5; // Maximum allowed units
+    public int maxUnitCount = 3; // Maximum allowed units
     public int unitCountIncrementCost = 5; // Cost to increment max unit count
 
     private readonly float messageDuration = 2f;

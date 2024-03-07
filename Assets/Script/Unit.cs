@@ -4,7 +4,7 @@ using TMPro;
 
 public class Unit : MonoBehaviour
 {
-    public float maxHealth = 1000;
+    public float maxHealth = 1000f;
     public float health;
     public float damage = 10f;
     public float defense = 5f;
@@ -12,11 +12,10 @@ public class Unit : MonoBehaviour
     public float attackSpeed = 1f;
     public float movementSpeed = 3f;
     public float critHitChance = 0.2f;
-    public float upgradeMultiplier = 1.5f;
     public int unitCost = 3;
-    public int upgradeCost = 5;
-    public int upgradeLevel = 0;
-    public int maxUpgradeLevel = 3;
+    public int upgradeCost;
+    public int Level = 1;
+    public int maxLevel = 3;
     public string faction;
     public TextMeshPro healthbar;
     
@@ -52,6 +51,7 @@ public class Unit : MonoBehaviour
             }
         }
         UpdateHealth();
+        upgradeCost = Level * 4;
     }
     //set the health of units
     public void UpdateHealth()
@@ -60,7 +60,7 @@ public class Unit : MonoBehaviour
         {
             health = maxHealth;
         }
-        healthbar.text = health + "/" + upgradeLevel;
+        healthbar.text = health + "/" + Level;
     }
     private void MoveTowardsNearestTarget()
     {

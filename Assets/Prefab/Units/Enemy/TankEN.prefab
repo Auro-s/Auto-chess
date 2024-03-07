@@ -128,17 +128,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10000
   health: 0
-  damage: 700
-  defense: 400
+  damage: 450
+  defense: 300
   attackRange: 1
   attackSpeed: 1
   movementSpeed: 3
   critHitChance: 0.2
-  upgradeMultiplier: 1.5
   unitCost: 3
   upgradeCost: 5
-  upgradeLevel: 0
-  maxUpgradeLevel: 3
+  Level: 1
+  maxLevel: 3
   faction: 
   healthbar: {fileID: 5955495146684241227}
 --- !u!1 &8656552967294949107
@@ -218,7 +217,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5955495146684241227
 MonoBehaviour:
