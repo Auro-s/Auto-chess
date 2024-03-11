@@ -183,13 +183,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8297070987461617273}
   - component: {fileID: 5970391006399216548}
-  - component: {fileID: 4148585067448434630}
   - component: {fileID: 803459274572345007}
   - component: {fileID: 2359737376173432250}
-  - component: {fileID: 2213173261928891892}
   m_Layer: 0
-  m_Name: Warrior
-  m_TagString: Ally
+  m_Name: WarriorEN
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +251,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e0b832e4c9ddea543984f8e773c390b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 6, y: 6}
@@ -262,41 +260,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4148585067448434630
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5984797521719183443}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &803459274572345007
 Rigidbody2D:
   serializedVersion: 4
@@ -348,22 +311,5 @@ MonoBehaviour:
   upgradeCost: 5
   Level: 1
   maxLevel: 3
-  faction: Warrior
+  faction: 
   healthbar: {fileID: 6935093387272422806}
---- !u!114 &2213173261928891892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5984797521719183443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5aba9f1bc2da340a72f37eed871290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialPosition: {x: 0, y: 0}
-  boundaryXMin: -5.5
-  boundaryXMax: -0.5
-  boundaryYMin: -2.5
-  boundaryYMax: 2.5

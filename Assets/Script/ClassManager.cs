@@ -17,7 +17,6 @@ public class ClassManager : MonoBehaviour
     public float assasinDamageBonus = 50f;
     public float archerCritBonus = 0.1f;
     public float mageAtksBonus = 0.2f;
-    private List<Unit> allUnits;
 
     void Update()
     {
@@ -35,12 +34,10 @@ public class ClassManager : MonoBehaviour
         countTextM.text = "" + unitM.Length.ToString();
         countTextT.text = "" + unitT.Length.ToString();
     }
-
     public void ClassBonuses()
     {
         ApplyClassBonuses();
     }
-
     void ApplyClassBonuses()
     {
         // Find every unit with faction

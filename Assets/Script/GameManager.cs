@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +10,13 @@ public class GameManager : MonoBehaviour
     public Button loseButton;
     public Button winButton;
     public Button startButton;
+    public Button endButton;
     public TextMeshProUGUI messageText;
-    public GameObject[] secondFight;
-    public GameObject[] thirdFight;
+    public GameObject pause;
+    public GameObject firstFight;
+    public GameObject secondFight;
+    public GameObject thirdFight;
     public bool isPaused = true;
-    public bool isFirstFight = true;
     public float upgradeMultiplier = 1.5f;
 
     private readonly float messageDuration = 2f;
@@ -62,7 +63,6 @@ public class GameManager : MonoBehaviour
             ShopManager.Instance.playerMoney += 15;
             ShopManager.Instance.UpdateMoneyText();
         }
-
         if (isPaused)
         {
             UpgradeUnit();
@@ -77,6 +77,14 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            pause.SetActive(true);
+        }
+    }
+    public void Restart()
+    {
+        pause.SetActive(false);
     }
     public void StartFight()
     {
@@ -204,33 +212,27 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void NextFight() //This only work if the fight are 3 and no more.
+    public void NextFight()
     {
-        if (isFirstFight)
+        if (firstFight.activeSelf)
         {
-            foreach (GameObject unit in secondFight)
-            {
-                if (unit != null)
-                {
-                    unit.SetActive(true);
-                }
-            }
+            firstFight.SetActive(false);
+            secondFight.SetActive(true);
             winButton.gameObject.SetActive(false);
             startButton.gameObject.SetActive(true);
-            isFirstFight = false;
             AbleDrag();
         }
-        else if (!isFirstFight)
+        else if (secondFight.activeSelf)
         {
-            foreach (GameObject unit in thirdFight)
-            {
-                if (unit != null)
-                {
-                    unit.SetActive(true);
-                }
-            }
+            secondFight.SetActive(false);
+            thirdFight.SetActive(true);
             winButton.gameObject.SetActive(false);
+            startButton.gameObject.SetActive(true);
             AbleDrag();
+        }
+        else if (thirdFight.activeSelf)
+        {
+            endButton.gameObject.SetActive(true);
         }
     }
     private void DisplayMessage(string message)
