@@ -1,13 +1,15 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-public class SpawnButton : MonoBehaviour
+using UnityEngine.EventSystems;
+public class SpawnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // Reference to the unit prefab
-    public GameObject unitPrefab;
+    public GameObject unitPrefab; //Reference to the unit prefab
+    public GameObject statDisplay; //Referance to the text object with unit stat
     public TextMeshProUGUI messageText;
-
+    
     private readonly float messageDuration = 2f;
+
     public void SpawnUnit()
     {
         ShopManager shopManager = FindObjectOfType<ShopManager>();
@@ -41,14 +43,26 @@ public class SpawnButton : MonoBehaviour
             DisplayMessage("Not enough money!");
         }
     }
-
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (statDisplay != null)
+        {
+            statDisplay.SetActive(true);
+        }
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (statDisplay != null)
+        {
+            statDisplay.SetActive(false);
+        }
+    }
     // Function to display a message on the UI text
     private void DisplayMessage(string message)
     {
         messageText.text = message;
         StartCoroutine(HideMessage());
     }
-
     // Coroutine to hide the message after a certain duration
     private IEnumerator HideMessage()
     {
