@@ -1196,6 +1196,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 503791398}
+        m_TargetAssemblyTypeName: SpawnButton, Assembly-CSharp
+        m_MethodName: StatDisplayOFF
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &162697225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3469,6 +3481,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 251472657}
+        m_TargetAssemblyTypeName: SpawnButton, Assembly-CSharp
+        m_MethodName: StatDisplayOFF
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &527662068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,7 +5118,6 @@ GameObject:
   - component: {fileID: 703257769}
   - component: {fileID: 703257768}
   - component: {fileID: 703257767}
-  - component: {fileID: 703257766}
   m_Layer: 5
   m_Name: WarriorDisplay
   m_TagString: Untagged
@@ -5127,24 +5150,6 @@ RectTransform:
   m_AnchoredPosition: {x: -397.42096, y: 0}
   m_SizeDelta: {x: 495.0332, y: 420.2808}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &703257766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703257764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e9b2ca5df4e45498f6b646fdb942eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 942353265}
-  damageText: {fileID: 0}
-  defenseText: {fileID: 0}
-  rangeText: {fileID: 0}
-  attackSpeedText: {fileID: 0}
-  movementSpeedText: {fileID: 0}
 --- !u!114 &703257767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5353,7 +5358,6 @@ GameObject:
   - component: {fileID: 711518292}
   - component: {fileID: 711518291}
   - component: {fileID: 711518290}
-  - component: {fileID: 711518289}
   m_Layer: 5
   m_Name: ArcherDisplay
   m_TagString: Untagged
@@ -5386,24 +5390,6 @@ RectTransform:
   m_AnchoredPosition: {x: -397.42096, y: 0}
   m_SizeDelta: {x: 495.0332, y: 420.2808}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &711518289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711518287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e9b2ca5df4e45498f6b646fdb942eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 1550178561}
-  damageText: {fileID: 0}
-  defenseText: {fileID: 0}
-  rangeText: {fileID: 0}
-  attackSpeedText: {fileID: 0}
-  movementSpeedText: {fileID: 0}
 --- !u!114 &711518290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5825,7 +5811,6 @@ GameObject:
   - component: {fileID: 779111787}
   - component: {fileID: 779111786}
   - component: {fileID: 779111785}
-  - component: {fileID: 779111788}
   m_Layer: 5
   m_Name: TankDisplay
   m_TagString: Untagged
@@ -5920,24 +5905,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779111783}
   m_CullTransparentMesh: 1
---- !u!114 &779111788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779111783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e9b2ca5df4e45498f6b646fdb942eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 25623980}
-  damageText: {fileID: 0}
-  defenseText: {fileID: 0}
-  rangeText: {fileID: 0}
-  attackSpeedText: {fileID: 0}
-  movementSpeedText: {fileID: 0}
 --- !u!1 &779374728
 GameObject:
   m_ObjectHideFlags: 0
@@ -6742,7 +6709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Meny
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7369,7 +7336,6 @@ GameObject:
   - component: {fileID: 914961142}
   - component: {fileID: 914961141}
   - component: {fileID: 914961140}
-  - component: {fileID: 914961139}
   m_Layer: 5
   m_Name: MageDisplay
   m_TagString: Untagged
@@ -7402,24 +7368,6 @@ RectTransform:
   m_AnchoredPosition: {x: -397.42096, y: 0}
   m_SizeDelta: {x: 495.0332, y: 420.2808}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &914961139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914961137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e9b2ca5df4e45498f6b646fdb942eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 1317813785}
-  damageText: {fileID: 0}
-  defenseText: {fileID: 0}
-  rangeText: {fileID: 0}
-  attackSpeedText: {fileID: 0}
-  movementSpeedText: {fileID: 0}
 --- !u!114 &914961140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8047,7 +7995,6 @@ GameObject:
   - component: {fileID: 1001809930}
   - component: {fileID: 1001809929}
   - component: {fileID: 1001809928}
-  - component: {fileID: 1001809927}
   m_Layer: 5
   m_Name: ASDisplay
   m_TagString: Untagged
@@ -8080,24 +8027,6 @@ RectTransform:
   m_AnchoredPosition: {x: -397.42096, y: 0}
   m_SizeDelta: {x: 495.0332, y: 420.2808}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1001809927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001809925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e9b2ca5df4e45498f6b646fdb942eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 615222896}
-  damageText: {fileID: 0}
-  defenseText: {fileID: 0}
-  rangeText: {fileID: 0}
-  attackSpeedText: {fileID: 0}
-  movementSpeedText: {fileID: 0}
 --- !u!114 &1001809928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12740,6 +12669,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1834303406}
+        m_TargetAssemblyTypeName: SpawnButton, Assembly-CSharp
+        m_MethodName: StatDisplayOFF
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1697748694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13858,6 +13799,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1791780079}
         m_TargetAssemblyTypeName: UnitSpawnButton, Assembly-CSharp
         m_MethodName: SpawnUnit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1791780079}
+        m_TargetAssemblyTypeName: SpawnButton, Assembly-CSharp
+        m_MethodName: StatDisplayOFF
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17606,6 +17559,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3862499424965771367}
         m_TargetAssemblyTypeName: UnitSpawnButton, Assembly-CSharp
         m_MethodName: SpawnUnit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3862499424965771367}
+        m_TargetAssemblyTypeName: SpawnButton, Assembly-CSharp
+        m_MethodName: StatDisplayOFF
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

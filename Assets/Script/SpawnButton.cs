@@ -57,6 +57,10 @@ public class SpawnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             statDisplay.SetActive(false);
         }
     }
+    public void StatDisplayOFF()
+    {
+        statDisplay.SetActive(false);
+    }
     // Function to display a message on the UI text
     private void DisplayMessage(string message)
     {
