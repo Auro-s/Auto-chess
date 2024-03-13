@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -19,6 +20,7 @@ public class Unit : MonoBehaviour
     public string faction;
     public TextMeshPro healthbar;
     public AudioSource audioSource;
+    public GameObject attackAnimation;
     
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
@@ -137,7 +139,19 @@ public class Unit : MonoBehaviour
                 target.TakeDamage(finalDamage);
                 lastAttackTime = Time.time; // Update last attack time
                 audioSource.Play();
+                attackAnimation.SetActive(true);
+                StartCoroutine(DeactivateAfterDelay(0.2f));
             }
+        }
+    }
+    IEnumerator DeactivateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Deactivate the slash effect
+        if (attackAnimation != null)
+        {
+            attackAnimation.SetActive(false);
         }
     }
     // Handle taking damage
