@@ -34,15 +34,14 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist across scenes
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            pause.SetActive(true);
+        }
         // Check if all ally units are dead
         bool allAllyUnitsDead = !GameObject.FindGameObjectsWithTag("Ally").Any();
 
@@ -71,15 +70,11 @@ public class GameManager : MonoBehaviour
             foreach (Unit unit in units)
             {
 
-                if (unit.TryGetComponent<Rigidbody2D>(out var unitRb))
+                if (unit.CompareTag("Ally") && unit.TryGetComponent<Rigidbody2D>(out var unitRb))
                 {
                     unitRb.bodyType = RigidbodyType2D.Kinematic;
                 }
             }
-        }
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            pause.SetActive(true);
         }
     }
     public void Restart()
@@ -120,9 +115,12 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject allyUnit in allyUnits)
         {
-            if (!allyPositions.ContainsKey(allyUnit.name))
+            // Generate a unique identifier using the name and instance ID
+            string uniqueIdentifier = allyUnit.name + "_" + allyUnit.GetInstanceID().ToString();
+
+            if (!allyPositions.ContainsKey(uniqueIdentifier))
             {
-                allyPositions.Add(allyUnit.name, allyUnit.transform.position);
+                allyPositions.Add(uniqueIdentifier, allyUnit.transform.position);
             }
         }
     }
@@ -132,10 +130,13 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject allyUnit in allyUnits)
         {
-            if (allyPositions.ContainsKey(allyUnit.name))
+            // Generate a unique identifier using the name and instance ID
+            string uniqueIdentifier = allyUnit.name + "_" + allyUnit.GetInstanceID().ToString();
+            
+            if (allyPositions.ContainsKey(uniqueIdentifier))
             {
                 // Set the position of the ally unit to the stored position
-                allyUnit.transform.position = allyPositions[allyUnit.name];
+                allyUnit.transform.position = allyPositions[uniqueIdentifier];
             }
         }
     }

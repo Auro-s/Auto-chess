@@ -18,6 +18,7 @@ public class Unit : MonoBehaviour
     public int maxLevel = 3;
     public string faction;
     public TextMeshPro healthbar;
+    public AudioSource audioSource;
     
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
@@ -135,6 +136,7 @@ public class Unit : MonoBehaviour
                 // Perform attack logic 
                 target.TakeDamage(finalDamage);
                 lastAttackTime = Time.time; // Update last attack time
+                audioSource.Play();
             }
         }
     }
