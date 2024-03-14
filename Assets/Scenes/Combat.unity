@@ -7299,19 +7299,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 869132355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 940346204}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Restart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &869132355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8013,7 +8001,6 @@ MonoBehaviour:
   thirdFight: {fileID: 1985223662}
   isPaused: 1
   upgradeMultiplier: 1.5
-  itemManager: {fileID: 450097592433851694}
 --- !u!1 &942353263
 GameObject:
   m_ObjectHideFlags: 0

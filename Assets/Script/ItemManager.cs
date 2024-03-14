@@ -24,7 +24,7 @@ public class ItemManager : MonoBehaviour
             Instance = this;
         }
     }
-    public void SpawnRandomButtons(int count)
+    public void SpawnRandomItem(int count)
     {
         // Make sure the count doesn't exceed the number of buttons in the list
         count = Mathf.Min(count, buttons.Count);

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7379598057081385380}
   - component: {fileID: 1894568001785109523}
   - component: {fileID: 7471621109552965651}
-  - component: {fileID: -5731402533672853983}
   m_Layer: 5
   m_Name: Talisman
   m_TagString: Untagged
@@ -76,15 +75,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-5731402533672853983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8614424400451688613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56db5f7ea6b2d334faab899efde4ac2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
