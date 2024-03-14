@@ -4,10 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClassInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Info : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject InfoClass;
     public TextMeshProUGUI classInfo;
+
+    public GameObject ItemClass;
+    public TextMeshProUGUI itemInfo;
+
     public string classText;
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -17,6 +21,11 @@ public class ClassInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             InfoClass.SetActive(true);
             classInfo.text = classText;
         }
+        if (itemInfo != null)
+        {
+            ItemClass.SetActive(true);
+            itemInfo.text = classText;
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -24,5 +33,13 @@ public class ClassInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             InfoClass.SetActive(false);
         }
+        if (itemInfo != null)
+        {
+            ItemClass.SetActive(false);
+        }
+    }
+    public void StatDisplayOFF()
+    {
+        ItemClass.SetActive(false);
     }
 }

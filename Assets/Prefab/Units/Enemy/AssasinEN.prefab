@@ -133,6 +133,7 @@ MonoBehaviour:
   damage: 900
   defense: 150
   attackRange: 2
+  baseAtks: 1.1
   attackSpeed: 1.1
   movementSpeed: 5
   critHitChance: 0.2

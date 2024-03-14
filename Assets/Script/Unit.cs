@@ -5,13 +5,14 @@ using TMPro;
 
 public class Unit : MonoBehaviour
 {
-    public float maxHealth = 1000f;
+    public float maxHealth;
     public float health;
-    public float damage = 10f;
-    public float defense = 5f;
-    public float attackRange = 5f;
-    public float attackSpeed = 1f;
-    public float movementSpeed = 3f;
+    public float damage;
+    public float defense;
+    public float attackRange;
+    public float baseAtks;
+    public float attackSpeed;
+    public float movementSpeed;
     public float critHitChance = 0.2f;
     public int unitCost = 3;
     public int upgradeCost;
@@ -138,9 +139,10 @@ public class Unit : MonoBehaviour
                 // Perform attack logic 
                 target.TakeDamage(finalDamage);
                 lastAttackTime = Time.time; // Update last attack time
+
                 audioSource.Play();
-                attackAnimation.SetActive(true);
-                StartCoroutine(DeactivateAfterDelay(0.2f));
+                attackAnimation.SetActive(true); 
+                StartCoroutine(DeactivateAfterDelay(0.2f)); 
             }
         }
     }

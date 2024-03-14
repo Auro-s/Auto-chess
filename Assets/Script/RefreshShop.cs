@@ -32,7 +32,6 @@ public class RefreshShop : MonoBehaviour
                 {
                     target.SetActive(true);
                 }
-
             }
         }
         else

@@ -170,6 +170,7 @@ MonoBehaviour:
   damage: 900
   defense: 150
   attackRange: 2
+  baseAtks: 1.1
   attackSpeed: 1.1
   movementSpeed: 5
   critHitChance: 0.2
@@ -311,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2724966348112754259
 Transform:
   m_ObjectHideFlags: 0
