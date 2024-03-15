@@ -5070,7 +5070,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8115499494602409075}
         m_TargetAssemblyTypeName: RefreshShop, Assembly-CSharp
-        m_MethodName: ToggleButton
+        m_MethodName: ToggleButtonFree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7995,7 +7995,7 @@ MonoBehaviour:
   startButton: {fileID: 2329474846076748569}
   endButton: {fileID: 1057095340}
   messageText: {fileID: 8212058736449356197}
-  pause: {fileID: 1476797228}
+  pauseMenu: {fileID: 0}
   firstFight: {fileID: 1320316686}
   secondFight: {fileID: 596772698}
   thirdFight: {fileID: 1985223662}
@@ -17942,17 +17942,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d734f18b9f6449970420c17b5e1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTalisman: {fileID: 7471621109552965651, guid: 6945f87b0849aaf4a81ae2a4b727d72b, type: 3}
-  itemSword: {fileID: 4633596182929853577, guid: fc869f2739d12eb4d8489179b1fd0f0d, type: 3}
-  itemShield: {fileID: 2483793317449701679, guid: 449a0b3d846b6ed44a418184273ec05c, type: 3}
-  itemPotion: {fileID: 320465125691465666, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-  itemGuinsoo: {fileID: 1453432172487444799, guid: de69e09b06c9cdc42adc7729086054f3, type: 3}
   buttons:
   - {fileID: 4787265746225835467}
   - {fileID: 6324695707986073584}
   - {fileID: 5143490763222768067}
   - {fileID: 1553806456}
   - {fileID: 2056755554}
+  itemTalisman: {fileID: 7471621109552965651, guid: 6945f87b0849aaf4a81ae2a4b727d72b, type: 3}
+  itemSword: {fileID: 4633596182929853577, guid: fc869f2739d12eb4d8489179b1fd0f0d, type: 3}
+  itemShield: {fileID: 2483793317449701679, guid: 449a0b3d846b6ed44a418184273ec05c, type: 3}
+  itemPotion: {fileID: 320465125691465666, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+  itemGuinsoo: {fileID: 1453432172487444799, guid: de69e09b06c9cdc42adc7729086054f3, type: 3}
   itemSpawn: {fileID: 955428860}
   ItemDisplay: {fileID: 1950733396}
 --- !u!222 &472238306931330789
@@ -18871,6 +18871,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Ally
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4969164008864765842, guid: 6945f87b0849aaf4a81ae2a4b727d72b, type: 3}
+        m_TargetAssemblyTypeName: Talisman, Assembly-CSharp
+        m_MethodName: ApplyHealthBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2339398388770398245

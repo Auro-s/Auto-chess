@@ -7,10 +7,12 @@ public class Unit : MonoBehaviour
 {
     public float maxHealth;
     public float health;
+    public float baseDamage;
     public float damage;
+    public float baseDefense;
     public float defense;
     public float attackRange;
-    public float baseAtks;
+    public float baseAtks; //base stats needed for reset the bonus of items
     public float attackSpeed;
     public float movementSpeed;
     public float critHitChance = 0.2f;
@@ -25,7 +27,15 @@ public class Unit : MonoBehaviour
     
     private float lastAttackTime;
     private string targetTag; // The tag to identify the target (either "Ally" or "Enemy")
-    
+
+    public static Unit Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         // Assign the target tag based on the unit's tag
@@ -52,10 +62,21 @@ public class Unit : MonoBehaviour
             else
             {
                 AttackNearestTarget();
+                if (TryGetComponent<Rigidbody2D>(out var rb2D))
+                {
+                    rb2D.bodyType = RigidbodyType2D.Static; //block the collision with other units
+                }
             }
         }
         UpdateHealth();
         upgradeCost = Level * 4;
+    }
+    public void Reset()
+    {
+        health = maxHealth;
+        damage = baseDamage;
+        defense = baseDefense;
+        attackSpeed = baseAtks;
     }
     //set the health of units
     public void UpdateHealth()

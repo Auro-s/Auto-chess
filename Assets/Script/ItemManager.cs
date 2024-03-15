@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
+    public List<Button> buttons = new();
+
     public Image itemTalisman;
     public Image itemSword;
     public Image itemShield;
     public Image itemPotion;
     public Image itemGuinsoo;
 
-    public List<Button> buttons = new();
     public Transform itemSpawn; 
     public Transform ItemDisplay;
-
 
     public static ItemManager Instance;
     private void Awake()

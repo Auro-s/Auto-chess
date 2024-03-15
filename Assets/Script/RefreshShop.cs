@@ -38,10 +38,25 @@ public class RefreshShop : MonoBehaviour
         {
             // Display an error message
             DisplayMessage("Not enough money!");
-        }
-        
+        }  
     }
-    
+    public void ToggleButtonFree()
+    {
+        if (AllButtonsActive())
+        {
+            return;
+        }
+        else if (!AllButtonsActive()) 
+        {
+            foreach (GameObject target in targetButton)
+            {
+                if (target != null && !target.activeSelf)
+                {
+                    target.SetActive(true);
+                }
+            }
+        }
+    }
     // Function to check if all buttons are already active
     private bool AllButtonsActive()
     {
@@ -60,7 +75,6 @@ public class RefreshShop : MonoBehaviour
         messageText.text = message;
         StartCoroutine(HideMessage());
     }
-
     // Coroutine to hide the message after a certain duration
     private IEnumerator HideMessage()
     {

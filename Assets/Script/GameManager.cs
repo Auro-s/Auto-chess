@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public Button startButton;
     public Button endButton;
     public TextMeshProUGUI messageText;
-    public GameObject pause;
+    public GameObject pauseMenu;
     public GameObject firstFight;
     public GameObject secondFight;
     public GameObject thirdFight;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            pause.SetActive(true);
+            pauseMenu.SetActive(true);
         }
         // Check if all ally units are dead
         bool allAllyUnitsDead = !GameObject.FindGameObjectsWithTag("Ally").Any();
@@ -55,12 +55,17 @@ public class GameManager : MonoBehaviour
             isPaused = true; // Pause the game when the end button is active
         }
         // Activate the win button if all enemies are dead
-        if (!isPaused && allEnemyUnitsDead)
+        else if (!isPaused && allEnemyUnitsDead && !thirdFight.activeSelf)
         {
             winButton.gameObject.SetActive(true);
             isPaused = true;
             ShopManager.Instance.playerMoney += 15;
             ShopManager.Instance.UpdateMoneyText();
+            ItemManager.Instance.SpawnRandomItem(2);
+        }
+        else if (!isPaused && allEnemyUnitsDead && thirdFight.activeSelf)
+        {
+            NextFight();
         }
         if (isPaused)
         {
@@ -79,7 +84,7 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        pause.SetActive(false);
+        pauseMenu.SetActive(false);
     }
     public void StartFight()
     {
@@ -221,7 +226,12 @@ public class GameManager : MonoBehaviour
             secondFight.SetActive(true);
             winButton.gameObject.SetActive(false);
             startButton.gameObject.SetActive(true);
+            Unit.Instance.Reset();
             AbleDrag();
+            foreach (Transform child in ItemManager.Instance.itemSpawn)
+            {
+                Destroy(child.gameObject);
+            }
         }
         else if (secondFight.activeSelf)
         {
@@ -229,11 +239,17 @@ public class GameManager : MonoBehaviour
             thirdFight.SetActive(true);
             winButton.gameObject.SetActive(false);
             startButton.gameObject.SetActive(true);
+            Unit.Instance.Reset();
             AbleDrag();
+            foreach (Transform child in ItemManager.Instance.itemSpawn)
+            {
+                Destroy(child.gameObject);
+            }
         }
         else if (thirdFight.activeSelf)
         {
             endButton.gameObject.SetActive(true);
+            winButton.gameObject.SetActive(false);
         }
     }
     private void DisplayMessage(string message)
