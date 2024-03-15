@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Guinsoo : MonoBehaviour
 {
-    public float damageBoostAmount = 100f; 
-
-    public void ApplyDamageBoost()
+    public float guinsoo = 0.01f; 
+    static public Guinsoo Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    public void ApplyGuinsoo()
     {
         // Check if this GameObject is active in the scene
         if (gameObject.activeInHierarchy)
@@ -19,7 +26,7 @@ public class Sword : MonoBehaviour
             {
                 if (unit.CompareTag("Ally"))
                 {
-                    unit.damage += damageBoostAmount;
+                    unit.attackSpeed += guinsoo;
                 }
             }
         }

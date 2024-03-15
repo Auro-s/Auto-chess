@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2710391741460196197}
   - component: {fileID: 7765615309348505446}
   - component: {fileID: 1453432172487444799}
+  - component: {fileID: 8079725870428647785}
   m_Layer: 5
   m_Name: Guinsoo
   m_TagString: Untagged
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8079725870428647785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507620491591106692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f49b3d76478b6b4a998faaf9cec850d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guinsoo: 0.01

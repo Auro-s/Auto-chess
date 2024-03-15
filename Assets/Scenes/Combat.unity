@@ -11047,6 +11047,103 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1375522722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1950733396}
+    m_Modifications:
+    - target: {fileID: 311574718865242826, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_Name
+      value: Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
 --- !u!1 &1400027471
 GameObject:
   m_ObjectHideFlags: 0
@@ -14387,6 +14484,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8297070987461617273, guid: 906759fc0ba6d6d4e8829da413e58fce, type: 3}
   m_PrefabInstance: {fileID: 1363860075}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1869118718 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+  m_PrefabInstance: {fileID: 1375522722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1884360547
 GameObject:
   m_ObjectHideFlags: 0
@@ -14846,7 +14948,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1869118718}
   m_Father: {fileID: 817467751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -17295,7 +17398,7 @@ MonoBehaviour:
   classInfo: {fileID: 0}
   ItemClass: {fileID: 54515269}
   itemInfo: {fileID: 804592554}
-  classText: Every time your units make an attacks, increase the unit AtkSpeed by
+  classText: Every time your units make an attacks, increase the ally AtkSpeed by
     0.1
 --- !u!1 &2061670787
 GameObject:
@@ -18876,6 +18979,42 @@ MonoBehaviour:
       - m_Target: {fileID: 4969164008864765842, guid: 6945f87b0849aaf4a81ae2a4b727d72b, type: 3}
         m_TargetAssemblyTypeName: Talisman, Assembly-CSharp
         m_MethodName: ApplyHealthBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -77491844916916647, guid: fc869f2739d12eb4d8489179b1fd0f0d, type: 3}
+        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
+        m_MethodName: ApplyDamageBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8582671493169047608, guid: 449a0b3d846b6ed44a418184273ec05c, type: 3}
+        m_TargetAssemblyTypeName: Shield, Assembly-CSharp
+        m_MethodName: ApplyDefenseBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 82505816483679677, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+        m_TargetAssemblyTypeName: Potion, Assembly-CSharp
+        m_MethodName: StartContinuousHealing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20660,7 +20799,7 @@ MonoBehaviour:
   classInfo: {fileID: 0}
   ItemClass: {fileID: 54515269}
   itemInfo: {fileID: 804592554}
-  classText: increase the defense of your unit by 150
+  classText: increase the defense of your unit by 50
 --- !u!1 &6620010422929714791
 GameObject:
   m_ObjectHideFlags: 0

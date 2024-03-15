@@ -163,7 +163,12 @@ public class Unit : MonoBehaviour
 
                 audioSource.Play();
                 attackAnimation.SetActive(true); 
-                StartCoroutine(DeactivateAfterDelay(0.2f)); 
+                StartCoroutine(DeactivateAfterDelay(0.2f));
+                  
+                if(Guinsoo.Instance != null)
+                {
+                    Guinsoo.Instance.ApplyGuinsoo(); 
+                }
             }
         }
     }
