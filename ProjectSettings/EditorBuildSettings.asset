@@ -9,7 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 8aafe6c03d602af49ac3eae0f8090463
   - enabled: 1
-    path: Assets/Scenes/Combat.unity
+    path: Assets/Scenes/CombatEasy.unity
     guid: 1efeef60add26404992b907dcbb4b8f8
+  - enabled: 1
+    path: Assets/Scenes/CombatMedium.unity
+    guid: 7d4aab3f33eb09648bc370346211ca8e
+  - enabled: 1
+    path: Assets/Scenes/CombatHard.unity
+    guid: 39499365107ea854ab066ef71ffaa4f2
+  - enabled: 1
+    path: Assets/Scenes/Anomaly.unity
+    guid: 9972acfe562d9a644ad435bb99c77dba
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 54191c29b3383cc47a6fe8a0f0d9d1b5, type: 2}

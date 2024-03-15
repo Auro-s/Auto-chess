@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject firstFight;
     public GameObject secondFight;
     public GameObject thirdFight;
+    public GameObject anomaly;
     public bool isPaused = true;
     public float upgradeMultiplier = 1.5f;
 
@@ -54,8 +55,12 @@ public class GameManager : MonoBehaviour
             loseButton.gameObject.SetActive(true);
             isPaused = true; // Pause the game when the end button is active
         }
+        else if (!isPaused && allEnemyUnitsDead && anomaly.activeSelf)
+        {
+            endButton.gameObject.SetActive(true);
+        }
         // Activate the win button if all enemies are dead
-        else if (!isPaused && allEnemyUnitsDead && !thirdFight.activeSelf)
+        else if (!isPaused && allEnemyUnitsDead && !thirdFight.activeSelf && !anomaly.activeSelf)
         {
             winButton.gameObject.SetActive(true);
             isPaused = true;
