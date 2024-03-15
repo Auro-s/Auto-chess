@@ -8514,7 +8514,6 @@ RectTransform:
   - {fileID: 2371393808873301512}
   - {fileID: 4813466125144591633}
   - {fileID: 6505219503467137405}
-  - {fileID: 1553806455}
   - {fileID: 2056755553}
   m_Father: {fileID: 1744792844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11047,103 +11046,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1375522722
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1950733396}
-    m_Modifications:
-    - target: {fileID: 311574718865242826, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_Name
-      value: Potion
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
 --- !u!1 &1400027471
 GameObject:
   m_ObjectHideFlags: 0
@@ -12455,168 +12357,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550178559}
   m_CullTransparentMesh: 1
---- !u!1 &1553806454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1553806455}
-  - component: {fileID: 1553806458}
-  - component: {fileID: 1553806457}
-  - component: {fileID: 1553806456}
-  - component: {fileID: 1553806459}
-  m_Layer: 5
-  m_Name: PotionButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1553806455
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553806454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 981510127}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1553806456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553806454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1553806457}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 450097592433851694}
-        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
-        m_MethodName: SpawnPotion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1553806459}
-        m_TargetAssemblyTypeName: Info, Assembly-CSharp
-        m_MethodName: StatDisplayOFF
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1553806457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553806454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35ca4f5c66d78cd4981338532ede3da7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1553806458
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553806454}
-  m_CullTransparentMesh: 1
---- !u!114 &1553806459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553806454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81416b391dfcd494191ddfef27c929da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoClass: {fileID: 0}
-  classInfo: {fileID: 0}
-  ItemClass: {fileID: 54515269}
-  itemInfo: {fileID: 804592554}
-  classText: every 3 seconds heal your units by 100
 --- !u!1 &1595002533
 GameObject:
   m_ObjectHideFlags: 0
@@ -14484,11 +14224,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8297070987461617273, guid: 906759fc0ba6d6d4e8829da413e58fce, type: 3}
   m_PrefabInstance: {fileID: 1363860075}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1869118718 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1095328857745072675, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
-  m_PrefabInstance: {fileID: 1375522722}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1884360547
 GameObject:
   m_ObjectHideFlags: 0
@@ -14948,8 +14683,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1869118718}
+  m_Children: []
   m_Father: {fileID: 817467751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -18049,12 +17783,10 @@ MonoBehaviour:
   - {fileID: 4787265746225835467}
   - {fileID: 6324695707986073584}
   - {fileID: 5143490763222768067}
-  - {fileID: 1553806456}
   - {fileID: 2056755554}
   itemTalisman: {fileID: 7471621109552965651, guid: 6945f87b0849aaf4a81ae2a4b727d72b, type: 3}
   itemSword: {fileID: 4633596182929853577, guid: fc869f2739d12eb4d8489179b1fd0f0d, type: 3}
   itemShield: {fileID: 2483793317449701679, guid: 449a0b3d846b6ed44a418184273ec05c, type: 3}
-  itemPotion: {fileID: 320465125691465666, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
   itemGuinsoo: {fileID: 1453432172487444799, guid: de69e09b06c9cdc42adc7729086054f3, type: 3}
   itemSpawn: {fileID: 955428860}
   ItemDisplay: {fileID: 1950733396}
@@ -19012,7 +18744,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82505816483679677, guid: 007d3d7c7e02019469c7c28e9f867ec2, type: 3}
+      - m_Target: {fileID: 3077752632611483352, guid: 9a9609ca79effb64e9c0dd39560ac6b0, type: 3}
         m_TargetAssemblyTypeName: Potion, Assembly-CSharp
         m_MethodName: StartContinuousHealing
         m_Mode: 1
@@ -19021,7 +18753,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ContinuousHealing()
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2339398388770398245

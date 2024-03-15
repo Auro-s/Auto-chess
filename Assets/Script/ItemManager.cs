@@ -10,7 +10,6 @@ public class ItemManager : MonoBehaviour
     public Image itemTalisman;
     public Image itemSword;
     public Image itemShield;
-    public Image itemPotion;
     public Image itemGuinsoo;
 
     public Transform itemSpawn; 
@@ -98,27 +97,6 @@ public class ItemManager : MonoBehaviour
         {
             // Check if the current button's name matches the specified name
             if (buttons[i].name == "ShieldButton")
-            {
-                // Remove the button from the list
-                buttons.RemoveAt(i);
-                // Exit the loop since the button is removed
-                break;
-            }
-        }
-    }
-    public void SpawnPotion()
-    {
-        // Instantiate the item prefab at the specified position
-        Instantiate(itemPotion, ItemDisplay);
-        // Destroy all child objects (buttons) of the itemSpawn
-        foreach (Transform child in itemSpawn)
-        {
-            Destroy(child.gameObject);
-        }
-        for (int i = 0; i < buttons.Count; i++)
-        {
-            // Check if the current button's name matches the specified name
-            if (buttons[i].name == "PotionButton")
             {
                 // Remove the button from the list
                 buttons.RemoveAt(i);
