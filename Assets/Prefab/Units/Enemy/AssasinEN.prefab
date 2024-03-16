@@ -166,7 +166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   health: 0
+  baseDamage: 0
   damage: 900
+  baseDefense: 0
   defense: 150
   attackRange: 2
   baseAtks: 1.1
@@ -294,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2876457867292476928
 Transform:
   m_ObjectHideFlags: 0

@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        // Singleton pattern to ensure there is only one instance
         if (Instance == null)
         {
             Instance = this;
@@ -58,6 +57,7 @@ public class GameManager : MonoBehaviour
         else if (!isPaused && allEnemyUnitsDead && anomaly.activeSelf)
         {
             endButton.gameObject.SetActive(true);
+            Gem.Instance.Active();
         }
         // Activate the win button if all enemies are dead
         else if (!isPaused && allEnemyUnitsDead && !thirdFight.activeSelf && !anomaly.activeSelf)

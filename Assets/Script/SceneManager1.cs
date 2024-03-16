@@ -5,6 +5,9 @@ public class SceneManager1 : MonoBehaviour
 {
     public GameObject difficulties;
     public GameObject mainMenu;
+
+    public static SceneManager1 Instance;
+
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync(0);
