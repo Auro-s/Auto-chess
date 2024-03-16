@@ -8,6 +8,7 @@ public class ShopManager : MonoBehaviour
     // Reference to the player's money text
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI unitCountText;
+    public TextMeshProUGUI unitCountCost;
     public TextMeshProUGUI messageText;
     public Button sellButton;
     public int playerMoney = 10;
@@ -71,7 +72,10 @@ public class ShopManager : MonoBehaviour
             unitCountText.color = Color.white;
         }
     }
-
+    public void UpdateCountCost()
+    {
+        unitCountCost.text = "" + unitCountIncrementCost;
+    }
     // Function to check if more units can be spawned
     public bool CanSpawnMoreUnits()
     {
@@ -93,8 +97,10 @@ public class ShopManager : MonoBehaviour
         {
             playerMoney -= unitCountIncrementCost;
             maxUnitCount++;
+            unitCountIncrementCost++;
             UpdateMoneyText();
             UpdateUnitCountText();
+            UpdateCountCost();
         }
         else
         {
