@@ -339,7 +339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1200
   health: 0
+  baseDamage: 0
   damage: 600
+  baseDefense: 0
   defense: 100
   attackRange: 6
   baseAtks: 1.3

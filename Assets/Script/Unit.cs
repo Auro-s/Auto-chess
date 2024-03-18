@@ -57,15 +57,19 @@ public class Unit : MonoBehaviour
             // If not in range of a target, move towards the nearest target
             if (!IsInRangeOfTarget())
             {
+                if (TryGetComponent<Rigidbody2D>(out var rb2D))
+                {
+                    rb2D.bodyType = RigidbodyType2D.Dynamic; //allow the collision with other units while in movement
+                }
                 MoveTowardsNearestTarget();
             }
             else
             {
-                AttackNearestTarget();
                 if (TryGetComponent<Rigidbody2D>(out var rb2D))
                 {
-                    rb2D.bodyType = RigidbodyType2D.Static; //block the collision with other units
+                    rb2D.bodyType = RigidbodyType2D.Static; //block the collision with other units while still
                 }
+                AttackNearestTarget();
             }
         }
         UpdateHealth();

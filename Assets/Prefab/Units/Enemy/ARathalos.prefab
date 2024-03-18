@@ -132,7 +132,7 @@ MonoBehaviour:
   damage: 1500
   baseDefense: 0
   defense: 400
-  attackRange: 1
+  attackRange: 2
   baseAtks: 1
   attackSpeed: 1
   movementSpeed: 8
