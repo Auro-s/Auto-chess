@@ -131,10 +131,10 @@ MonoBehaviour:
   baseDamage: 0
   damage: 1500
   baseDefense: 0
-  defense: 400
+  defense: 350
   attackRange: 2
   baseAtks: 1
-  attackSpeed: 1
+  attackSpeed: 0.8
   movementSpeed: 8
   critHitChance: 0
   unitCost: 3
@@ -157,7 +157,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aa8bb84695514ea4dbb7a02d73d8c3a8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0

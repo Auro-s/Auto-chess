@@ -167,7 +167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1200
   health: 0
+  baseDamage: 0
   damage: 700
+  baseDefense: 0
   defense: 100
   attackRange: 4
   baseAtks: 0.8
@@ -211,7 +213,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 80c808186ca44f14c822b2d6debda144, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0

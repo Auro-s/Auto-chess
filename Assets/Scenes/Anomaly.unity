@@ -7653,7 +7653,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 05cd698957dae924881f2417ee744a42, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -20196,7 +20196,7 @@ MonoBehaviour:
   unitCountCost: {fileID: 708864250}
   messageText: {fileID: 8212058736449356197}
   sellButton: {fileID: 1644169487}
-  playerMoney: 80
+  playerMoney: 100
   currentUnitCount: 0
   maxUnitCount: 3
   unitCountIncrementCost: 5
