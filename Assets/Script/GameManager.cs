@@ -38,9 +38,16 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.SetActive(true);
+            if(!pauseMenu.activeSelf)
+            { 
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                pauseMenu.SetActive(false);
+            }
         }
         // Check if all ally units are dead
         bool allAllyUnitsDead = !GameObject.FindGameObjectsWithTag("Ally").Any();
